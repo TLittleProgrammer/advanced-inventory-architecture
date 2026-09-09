@@ -19,7 +19,7 @@
 
 /[Aa]ssets/WebGLTemplates/*/TemplateData/*.gz
 
-/[Aa]sset[叠Bundles]/
+/[Aa]ssetBundles/
 /[Cc]onfig/linux64/
 /[Cc]onfig/osx64/
 /[Cc]onfig/win32/
