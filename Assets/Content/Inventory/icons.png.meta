@@ -1,0 +1,886 @@
+fileFormatVersion: 2
+guid: eaa36952a55447b4d83359f5d949acdf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2422836882208017087
+    second: fantasy-inventory-atlas-unity-sliced-8x4-256_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 789
+        width: 161
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fba49b0ce45af9120800000000000000
+      internalID: 2422836882208017087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_1
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 789
+        width: 134
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b327cf109ff923f4f864a7ef379f4fd5
+      internalID: 832947902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_2
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 789
+        width: 129
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb30e7bb6bf3d94a89a64b8d2200bbb
+      internalID: -100538207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_3
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 789
+        width: 159
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e7ff1fb8d3f394c9d31c1b0d0bca83
+      internalID: -753251453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_4
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 789
+        width: 176
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401e0204b96a23e46861a0ff1b7ad89e
+      internalID: 1881360016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_5
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 789
+        width: 148
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db701fdab9e9e0344be78bf02a708934
+      internalID: 260228084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_6
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 790
+        width: 214
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f98e88bf67d23469cea90c02a8d2de
+      internalID: 1255284676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_7
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 789
+        width: 162
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6830c78260fd0db428a1f98802b670a3
+      internalID: -905261182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_8
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 533
+        width: 179
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3826a1a7002b1874b8d351ed9dcc16a0
+      internalID: -386995479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_9
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 533
+        width: 206
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddee2a164a36688498bd9cbd7346cce0
+      internalID: 680244615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_10
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 533
+        width: 154
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380e6f9a0e5c41140b85b68b98c299aa
+      internalID: 1608122406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_11
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 533
+        width: 149
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6859d7427d683854e885acf96419a863
+      internalID: 1276936457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_12
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 533
+        width: 178
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e03cea683b0ebff468cd2490ecdedd4b
+      internalID: 451591381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_13
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 533
+        width: 209
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f61e2937d5778489e4685c2eea95ff
+      internalID: -1718752260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_14
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 533
+        width: 166
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0270ffba0a143b04eb7aee06ffdc8ef5
+      internalID: 1922978137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_15
+      rect:
+        serializedVersion: 2
+        x: 1847
+        y: 533
+        width: 146
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45164aaf5b8e9864cb044769e87d4e01
+      internalID: 1672939011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_16
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 285
+        width: 214
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f46437d617b5347b709e6ddd683c30
+      internalID: -1866659255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_17
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 277
+        width: 202
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee93c45661b03d747971de5010b1cf7d
+      internalID: 379575082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_18
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 278
+        width: 214
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b4b0e5064f5e2b419459ff4ff1f6b69
+      internalID: 1514511655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_19
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 277
+        width: 210
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf1077fab9780ab439b6377dcc8002be
+      internalID: -802865065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_20
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 278
+        width: 214
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b67afe793b51a4794e1bddaddb5a1a
+      internalID: 287768399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_21
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 298
+        width: 214
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c12b48648714b384db3076b4ccf70948
+      internalID: -395484887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_22
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 277
+        width: 206
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4c60567b8c5b64aab1bce778f9b48f
+      internalID: 15276492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_23
+      rect:
+        serializedVersion: 2
+        x: 1813
+        y: 280
+        width: 214
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c02acf52a76f0c438109c79bce4a63d
+      internalID: 1032545987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_24
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 21
+        width: 191
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523d5cf1492f64d488604af1e44a8102
+      internalID: -1310222613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_25
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 21
+        width: 211
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c496484baaa860a4f99fd94d0e2b1d99
+      internalID: 950135693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_26
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 21
+        width: 168
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2391a3c73f6da4fb90bb31f40a1ec8
+      internalID: 1764652400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_27
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 21
+        width: 185
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4694b3933967646aa00fc3be78de20
+      internalID: 1084979571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_28
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 21
+        width: 174
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e236915cf2fc4464f953c9cd4f03ad12
+      internalID: -1859124730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_29
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 21
+        width: 178
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a4c316534bb8c6468f1a5f05a30e296
+      internalID: 1242346589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_30
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 21
+        width: 192
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f12fba42e0785e4ca86211735d1df86
+      internalID: 1713626922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fantasy-inventory-atlas-unity-sliced-8x4-256_31
+      rect:
+        serializedVersion: 2
+        x: 1813
+        y: 24
+        width: 214
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91115c690214f5b41ab9b9ef8a86186b
+      internalID: 1214667816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7af868f2494be014b8982fb657b1ba50
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      fantasy-inventory-atlas-unity-sliced-8x4-256_0: 2422836882208017087
+      fantasy-inventory-atlas-unity-sliced-8x4-256_1: 832947902
+      fantasy-inventory-atlas-unity-sliced-8x4-256_10: 1608122406
+      fantasy-inventory-atlas-unity-sliced-8x4-256_11: 1276936457
+      fantasy-inventory-atlas-unity-sliced-8x4-256_12: 451591381
+      fantasy-inventory-atlas-unity-sliced-8x4-256_13: -1718752260
+      fantasy-inventory-atlas-unity-sliced-8x4-256_14: 1922978137
+      fantasy-inventory-atlas-unity-sliced-8x4-256_15: 1672939011
+      fantasy-inventory-atlas-unity-sliced-8x4-256_16: -1866659255
+      fantasy-inventory-atlas-unity-sliced-8x4-256_17: 379575082
+      fantasy-inventory-atlas-unity-sliced-8x4-256_18: 1514511655
+      fantasy-inventory-atlas-unity-sliced-8x4-256_19: -802865065
+      fantasy-inventory-atlas-unity-sliced-8x4-256_2: -100538207
+      fantasy-inventory-atlas-unity-sliced-8x4-256_20: 287768399
+      fantasy-inventory-atlas-unity-sliced-8x4-256_21: -395484887
+      fantasy-inventory-atlas-unity-sliced-8x4-256_22: 15276492
+      fantasy-inventory-atlas-unity-sliced-8x4-256_23: 1032545987
+      fantasy-inventory-atlas-unity-sliced-8x4-256_24: -1310222613
+      fantasy-inventory-atlas-unity-sliced-8x4-256_25: 950135693
+      fantasy-inventory-atlas-unity-sliced-8x4-256_26: 1764652400
+      fantasy-inventory-atlas-unity-sliced-8x4-256_27: 1084979571
+      fantasy-inventory-atlas-unity-sliced-8x4-256_28: -1859124730
+      fantasy-inventory-atlas-unity-sliced-8x4-256_29: 1242346589
+      fantasy-inventory-atlas-unity-sliced-8x4-256_3: -753251453
+      fantasy-inventory-atlas-unity-sliced-8x4-256_30: 1713626922
+      fantasy-inventory-atlas-unity-sliced-8x4-256_31: 1214667816
+      fantasy-inventory-atlas-unity-sliced-8x4-256_4: 1881360016
+      fantasy-inventory-atlas-unity-sliced-8x4-256_5: 260228084
+      fantasy-inventory-atlas-unity-sliced-8x4-256_6: 1255284676
+      fantasy-inventory-atlas-unity-sliced-8x4-256_7: -905261182
+      fantasy-inventory-atlas-unity-sliced-8x4-256_8: -386995479
+      fantasy-inventory-atlas-unity-sliced-8x4-256_9: 680244615
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
