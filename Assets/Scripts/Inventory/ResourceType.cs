@@ -1,6 +1,6 @@
 namespace Data.Inventory
 {
-    public enum ResourceType
+    public enum ResourceType : byte
     {
         RubyPotion = 0,
         ManaPotion = 1,

@@ -1,8 +1,7 @@
 {
-    "name": "Scripts",
+    "name": "Inventory",
     "rootNamespace": "",
     "references": [
-        "Inventory",
         "Common"
     ],
     "includePlatforms": [],
