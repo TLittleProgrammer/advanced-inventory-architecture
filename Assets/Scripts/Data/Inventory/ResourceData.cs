@@ -1,3 +1,4 @@
+using Data.Inventory.Attributes;
 using UnityEngine;
 
 namespace Data.Inventory
@@ -5,7 +6,7 @@ namespace Data.Inventory
     [CreateAssetMenu(fileName = "Resource Data", menuName = "Inventory/Resource Data")]
     public sealed class ResourceData : ScriptableObject
     {
-        public ResourceType ResourceType;
+        [SerializedSprite]
         public Sprite Icon;
         public int MaxCount;
     }
