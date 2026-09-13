@@ -3,7 +3,10 @@
     "rootNamespace": "",
     "references": [
         "Inventory",
-        "Common"
+        "Common",
+        "Unity.TextMeshPro",
+        "Unity.Addressables",
+        "Unity.ResourceManager"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
