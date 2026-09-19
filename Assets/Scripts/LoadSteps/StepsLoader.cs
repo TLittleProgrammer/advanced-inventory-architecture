@@ -12,7 +12,8 @@ namespace LoadSteps
             var loaders = new List<IExecutable>()
             {
                 new InventoryLoader(container.LocationContainer.InventoryContainer),
-                new DropdownLoader(container.LocationContainer.AddItemContainer)
+                new MechanicsLoader(container),
+                new StartControllersLoader(),
             };
 
             foreach (var loader in loaders)

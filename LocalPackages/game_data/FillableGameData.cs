@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 
 namespace GameData.LocalPackages.GameData
@@ -9,7 +10,10 @@ namespace GameData.LocalPackages.GameData
         private readonly Dictionary<TKey, TData> _data = new();
 
         public bool TryGetValue(TKey key, out TData value) => _data.TryGetValue(key, out value);
-        protected void Add(TKey key, TData value) => _data.Add(key, value);
         public abstract void FillData();
+        protected void Add(TKey key, TData value) => _data.Add(key, value);
+        
+        public IEnumerator<TData> GetEnumerator() => _data.Values.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }

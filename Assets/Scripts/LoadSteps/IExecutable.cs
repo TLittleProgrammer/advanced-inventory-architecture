@@ -7,4 +7,9 @@ namespace LoadSteps
     {
         Task Execute(IGameContext context);
     }
+
+    public interface ISyncExecutable
+    {
+        void Execute(IGameContext context);
+    }
 }

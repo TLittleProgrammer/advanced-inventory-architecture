@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+
 namespace GameData.LocalPackages.GameData
 {
     public sealed class GameDataCollection<TKey, TData> : IGameData<TKey, TData>
@@ -12,5 +15,7 @@ namespace GameData.LocalPackages.GameData
 
         public TData this[TKey key] => _data[key];
         public bool TryGetValue(TKey key, out TData value) => _data.TryGetValue(key, out value);
+        public IEnumerator<TData> GetEnumerator() => _data.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }

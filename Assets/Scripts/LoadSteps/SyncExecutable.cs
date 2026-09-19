@@ -1,15 +1,16 @@
 using System.Threading.Tasks;
-using Canvas;
 using DefaultNamespace;
 
 namespace LoadSteps
 {
-    public sealed class DropdownLoader : IExecutable
+    public abstract class SyncExecutable : IExecutable
     {
         public Task Execute(IGameContext context)
         {
-            
+            SyncExecute(context);
             return Task.CompletedTask;
         }
+
+        protected abstract void SyncExecute(IGameContext context);
     }
 }

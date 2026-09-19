@@ -85,6 +85,30 @@
         "com.unity.modules.physics": "1.0.0"
       }
     },
+    "common": {
+      "version": "file:../LocalPackages/common",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
+    "game_data": {
+      "version": "file:../LocalPackages/game_data",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
+    "inventory": {
+      "version": "file:../LocalPackages/inventory",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
+    "mvc": {
+      "version": "file:../LocalPackages/mvc",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
