@@ -5,12 +5,12 @@ namespace Canvas
 {
     public sealed class EntryPoint : MonoBehaviour
     {
-        public LocationContainer LocationContainer;
+        public SceneContainer SceneContainer;
         
         private void Awake()
         {
             var loader = new StepsLoader();
-            loader.Load(LocationContainer);
+            loader.Load(SceneContainer);
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using DefaultNamespace;
 using Inventory;
 using Inventory.UI;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace LoadSteps
             _container = container;
         }
 
-        public async Task Execute()
+        public async Task Execute(IGameContext context)
         {
             var handle = Addressables.LoadAssetAsync<GameObject>(AddressableItemKey);
 

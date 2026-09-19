@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 2422836882208017087
-    second: fantasy-inventory-atlas-unity-sliced-8x4-256_0
+    second: RubyPotion
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,7 +128,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_0
+      name: RubyPotion
       rect:
         serializedVersion: 2
         x: 47
@@ -150,7 +150,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_1
+      name: ManaPotion
       rect:
         serializedVersion: 2
         x: 317
@@ -172,7 +172,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_2
+      name: MoonElixir
       rect:
         serializedVersion: 2
         x: 575
@@ -194,7 +194,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_3
+      name: HoneyFlask
       rect:
         serializedVersion: 2
         x: 816
@@ -216,7 +216,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_4
+      name: EmeraldCrystalCluster
       rect:
         serializedVersion: 2
         x: 1064
@@ -238,7 +238,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_5
+      name: LavenderCrystalShard
       rect:
         serializedVersion: 2
         x: 1334
@@ -260,7 +260,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_6
+      name: Moonstone
       rect:
         serializedVersion: 2
         x: 1557
@@ -282,7 +282,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_7
+      name: FireGemstone
       rect:
         serializedVersion: 2
         x: 1839
@@ -304,7 +304,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_8
+      name: ShortSword
       rect:
         serializedVersion: 2
         x: 38
@@ -326,7 +326,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_9
+      name: CrescentAxe
       rect:
         serializedVersion: 2
         x: 281
@@ -348,7 +348,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_10
+      name: LeafwoodBow
       rect:
         serializedVersion: 2
         x: 563
@@ -370,7 +370,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_11
+      name: FeatherArrowQuiver
       rect:
         serializedVersion: 2
         x: 821
@@ -392,7 +392,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_12
+      name: OakWand
       rect:
         serializedVersion: 2
         x: 1063
@@ -414,7 +414,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_13
+      name: SunShield
       rect:
         serializedVersion: 2
         x: 1303
@@ -436,7 +436,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_14
+      name: SilverDagger
       rect:
         serializedVersion: 2
         x: 1581
@@ -458,7 +458,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_15
+      name: BronzeLantern
       rect:
         serializedVersion: 2
         x: 1847
@@ -480,7 +480,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_16
+      name: WizardHat
       rect:
         serializedVersion: 2
         x: 21
@@ -502,7 +502,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_17
+      name: ForestHood
       rect:
         serializedVersion: 2
         x: 283
@@ -524,7 +524,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_18
+      name: AdventurerBoots
       rect:
         serializedVersion: 2
         x: 533
@@ -546,7 +546,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_19
+      name: LeatherGloves
       rect:
         serializedVersion: 2
         x: 791
@@ -568,7 +568,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_20
+      name: BlueCloak
       rect:
         serializedVersion: 2
         x: 1045
@@ -590,7 +590,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_21
+      name: LeatherSatchel
       rect:
         serializedVersion: 2
         x: 1301
@@ -612,7 +612,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_22
+      name: AncientSpellbook
       rect:
         serializedVersion: 2
         x: 1561
@@ -634,7 +634,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_23
+      name: SealedScroll
       rect:
         serializedVersion: 2
         x: 1813
@@ -656,7 +656,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_24
+      name: GoldenKey
       rect:
         serializedVersion: 2
         x: 32
@@ -678,7 +678,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_25
+      name: SapphireRing
       rect:
         serializedVersion: 2
         x: 278
@@ -700,7 +700,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_26
+      name: SunAmulet
       rect:
         serializedVersion: 2
         x: 556
@@ -722,7 +722,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_27
+      name: MushroomCluster
       rect:
         serializedVersion: 2
         x: 803
@@ -744,7 +744,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_28
+      name: HealingHerbs
       rect:
         serializedVersion: 2
         x: 1065
@@ -766,7 +766,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_29
+      name: IridescentFeather
       rect:
         serializedVersion: 2
         x: 1319
@@ -788,7 +788,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_30
+      name: CoinPouch
       rect:
         serializedVersion: 2
         x: 1568
@@ -810,7 +810,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fantasy-inventory-atlas-unity-sliced-8x4-256_31
+      name: TreasureChest
       rect:
         serializedVersion: 2
         x: 1813
@@ -847,38 +847,38 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      fantasy-inventory-atlas-unity-sliced-8x4-256_0: 2422836882208017087
-      fantasy-inventory-atlas-unity-sliced-8x4-256_1: 832947902
-      fantasy-inventory-atlas-unity-sliced-8x4-256_10: 1608122406
-      fantasy-inventory-atlas-unity-sliced-8x4-256_11: 1276936457
-      fantasy-inventory-atlas-unity-sliced-8x4-256_12: 451591381
-      fantasy-inventory-atlas-unity-sliced-8x4-256_13: -1718752260
-      fantasy-inventory-atlas-unity-sliced-8x4-256_14: 1922978137
-      fantasy-inventory-atlas-unity-sliced-8x4-256_15: 1672939011
-      fantasy-inventory-atlas-unity-sliced-8x4-256_16: -1866659255
-      fantasy-inventory-atlas-unity-sliced-8x4-256_17: 379575082
-      fantasy-inventory-atlas-unity-sliced-8x4-256_18: 1514511655
-      fantasy-inventory-atlas-unity-sliced-8x4-256_19: -802865065
-      fantasy-inventory-atlas-unity-sliced-8x4-256_2: -100538207
-      fantasy-inventory-atlas-unity-sliced-8x4-256_20: 287768399
-      fantasy-inventory-atlas-unity-sliced-8x4-256_21: -395484887
-      fantasy-inventory-atlas-unity-sliced-8x4-256_22: 15276492
-      fantasy-inventory-atlas-unity-sliced-8x4-256_23: 1032545987
-      fantasy-inventory-atlas-unity-sliced-8x4-256_24: -1310222613
-      fantasy-inventory-atlas-unity-sliced-8x4-256_25: 950135693
-      fantasy-inventory-atlas-unity-sliced-8x4-256_26: 1764652400
-      fantasy-inventory-atlas-unity-sliced-8x4-256_27: 1084979571
-      fantasy-inventory-atlas-unity-sliced-8x4-256_28: -1859124730
-      fantasy-inventory-atlas-unity-sliced-8x4-256_29: 1242346589
-      fantasy-inventory-atlas-unity-sliced-8x4-256_3: -753251453
-      fantasy-inventory-atlas-unity-sliced-8x4-256_30: 1713626922
-      fantasy-inventory-atlas-unity-sliced-8x4-256_31: 1214667816
-      fantasy-inventory-atlas-unity-sliced-8x4-256_4: 1881360016
-      fantasy-inventory-atlas-unity-sliced-8x4-256_5: 260228084
-      fantasy-inventory-atlas-unity-sliced-8x4-256_6: 1255284676
-      fantasy-inventory-atlas-unity-sliced-8x4-256_7: -905261182
-      fantasy-inventory-atlas-unity-sliced-8x4-256_8: -386995479
-      fantasy-inventory-atlas-unity-sliced-8x4-256_9: 680244615
+      RubyPotion: 2422836882208017087
+      ManaPotion: 832947902
+      LeafwoodBow: 1608122406
+      FeatherArrowQuiver: 1276936457
+      OakWand: 451591381
+      SunShield: -1718752260
+      SilverDagger: 1922978137
+      BronzeLantern: 1672939011
+      WizardHat: -1866659255
+      ForestHood: 379575082
+      AdventurerBoots: 1514511655
+      LeatherGloves: -802865065
+      MoonElixir: -100538207
+      BlueCloak: 287768399
+      LeatherSatchel: -395484887
+      AncientSpellbook: 15276492
+      SealedScroll: 1032545987
+      GoldenKey: -1310222613
+      SapphireRing: 950135693
+      SunAmulet: 1764652400
+      MushroomCluster: 1084979571
+      HealingHerbs: -1859124730
+      IridescentFeather: 1242346589
+      HoneyFlask: -753251453
+      CoinPouch: 1713626922
+      TreasureChest: 1214667816
+      EmeraldCrystalCluster: 1881360016
+      LavenderCrystalShard: 260228084
+      Moonstone: 1255284676
+      FireGemstone: -905261182
+      ShortSword: -386995479
+      CrescentAxe: 680244615
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

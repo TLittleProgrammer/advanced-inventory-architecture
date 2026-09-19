@@ -1,20 +1,23 @@
 using System.Collections.Generic;
 using Canvas;
+using DefaultNamespace;
 
 namespace LoadSteps
 {
     public class StepsLoader
     {
-        public void Load(LocationContainer container)
+        public async void Load(SceneContainer container)
         {
+            var context = new GameContext();
             var loaders = new List<IExecutable>()
             {
-                new InventoryLoader(container.InventoryContainer)
+                new InventoryLoader(container.LocationContainer.InventoryContainer),
+                new DropdownLoader(container.LocationContainer.AddItemContainer)
             };
 
             foreach (var loader in loaders)
             {
-                loader.Execute();
+                await loader.Execute(context);
             }
         }
     }
