@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Infrastructure;
 using Inventory.Dropdown;
 using Inventory.Slot;
 using LocalPackages.MVC;

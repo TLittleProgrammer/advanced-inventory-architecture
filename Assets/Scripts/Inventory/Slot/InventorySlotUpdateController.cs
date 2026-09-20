@@ -1,9 +1,8 @@
-using Inventory.UI;
+using Infrastructure;
+using Inventory.Resource;
 using LocalPackages.MVC;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.AI;
-using UnityEngine.U2D;
 
 namespace Inventory.Slot
 {
@@ -11,9 +10,9 @@ namespace Inventory.Slot
     {
         private readonly IGameContext _context;
         private readonly InventorySlotModel _model;
-        private readonly CanvasInventoryItemContainer _container;
+        private readonly InventorySlotContainer _container;
 
-        public InventorySlotUpdateController(IGameContext context, InventorySlotModel model, CanvasInventoryItemContainer container)
+        public InventorySlotUpdateController(IGameContext context, InventorySlotModel model, InventorySlotContainer container)
         {
             _context = context;
             _model = model;
@@ -22,22 +21,22 @@ namespace Inventory.Slot
 
         public void Activate()
         {
-            _model.Update += OnUpdated;
+            _model.Update.OnCall += OnUpdated;
         }
 
         public void Deactivate()
         {
-            _model.Update -= OnUpdated;
+            _model.Update.OnCall -= OnUpdated;
         }
 
-        private async void OnUpdated()
+        private async void OnUpdated(ResourceArguments args)
         {
-            var data = _context.Data.InventoryData[_model.ResourceArgs.ResourceType];
+            var data = _context.Data.InventoryData[args.ResourceType];
             var key = $"{data.SpriteData.AtlasId}[{data.SpriteData.SpriteId}]";
             var handle = Addressables.LoadAssetAsync<Sprite>(key);
             var sprite = await handle.Task;
             
-            _container.UpdateView(sprite, _model.ResourceArgs.Amount);
+            _container.UpdateView(sprite, args.Amount);
             
             Addressables.Release(handle);
         }

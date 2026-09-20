@@ -22,18 +22,14 @@ namespace Inventory.Resource
         
         public override bool TryAdd(BaseResource resource)
         {
-            if (_resourceType == ResourceType.Unknown)
-            {
-                _resourceType = resource.ResourceType;
-            }
-            
             var data = _data[resource.ResourceType];
             
-            if (_resourceType != resource.ResourceType || _amount + resource.Amount > data.MaxCount)
+            if ((_resourceType != ResourceType.Unknown && _resourceType != resource.ResourceType) || _amount + resource.Amount > data.MaxCount)
             {
                 return false;
             }
             
+            _resourceType = resource.ResourceType;
             _amount += resource.Amount;
             return true;
         }

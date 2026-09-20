@@ -1,5 +1,5 @@
-using System;
 using Inventory.Resource;
+using LocalPackages.Common;
 using LocalPackages.MVC;
 
 namespace Inventory.Slot
@@ -7,19 +7,11 @@ namespace Inventory.Slot
     public sealed class InventorySlotModel : IModel
     {
         public readonly int Index;
-        
-        public ResourceArguments ResourceArgs;
-        public event Action Update;
+        public readonly Trigger<ResourceArguments> Update = new();
         
         public InventorySlotModel(int index)
         {
             Index = index;
-        }
-
-        public void SetResourceArguments(ResourceArguments resourceArgs)
-        {
-            ResourceArgs = resourceArgs;
-            Update.Invoke();
         }
     }
 }

@@ -1,4 +1,5 @@
 using EntryPoint.Containers;
+using Infrastructure;
 
 namespace EntryPoint
 {

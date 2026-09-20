@@ -1,4 +1,5 @@
 using EntryPoint;
+using Infrastructure;
 
 namespace Inventory
 {

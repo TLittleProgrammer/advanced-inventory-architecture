@@ -10,9 +10,5 @@ namespace Inventory.Resource
             ResourceType = resourceType;
             Amount = amount;
         }
-        
-        public bool Equals(ResourceType other) => ResourceType == other;
-        public override bool Equals(object obj) => obj is IBaseResource other && Equals(other.ResourceType);
-        public override int GetHashCode() => (int)ResourceType;
     }
 }

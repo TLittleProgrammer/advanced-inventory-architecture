@@ -1,5 +1,5 @@
+using Infrastructure;
 using LocalPackages.MVC;
-using UnityEngine.PlayerLoop;
 
 namespace Inventory.Slot
 {
@@ -34,7 +34,7 @@ namespace Inventory.Slot
             }
 
             var resourceArgs = _inventoryModel.GetResourceArguments(_model.Index);
-            _model.SetResourceArguments(resourceArgs);
+            _model.Update.Call(resourceArgs);
         }
     }
 }

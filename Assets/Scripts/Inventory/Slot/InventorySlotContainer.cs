@@ -2,9 +2,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Inventory.UI
+namespace Inventory.Slot
 {
-    public sealed class CanvasInventoryItemContainer : MonoBehaviour, IInventoryItemContainer
+    public sealed class InventorySlotContainer : MonoBehaviour
     {
         [SerializeField] private Image _icon;
         [SerializeField] private TMP_Text _amount;

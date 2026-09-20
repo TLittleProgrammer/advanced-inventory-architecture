@@ -1,3 +1,4 @@
+using Infrastructure;
 using LocalPackages.MVC;
 
 namespace Inventory.Dropdown

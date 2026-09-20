@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using EntryPoint.Containers;
+using Infrastructure;
 using Inventory;
 
 namespace EntryPoint.Loaders
