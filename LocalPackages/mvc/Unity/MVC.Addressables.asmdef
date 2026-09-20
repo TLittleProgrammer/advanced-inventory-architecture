@@ -1,15 +1,10 @@
 {
-    "name": "Scripts",
+    "name": "MVC.Addressables",
     "rootNamespace": "",
     "references": [
-        "Inventory",
-        "Common",
         "MVC",
-        "GameData",
-        "Unity.TextMeshPro",
         "Unity.Addressables",
-        "Unity.ResourceManager",
-        "MVC.Addressables"
+        "Unity.ResourceManager"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

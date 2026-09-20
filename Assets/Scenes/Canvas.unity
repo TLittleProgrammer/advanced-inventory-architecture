@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Scripts::Canvas.AddItemContainer
   Dropdown: {fileID: 1270957566}
+  AddItemButton: {fileID: 1132464716}
 --- !u!1 &230177303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,7 +1130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Scripts::Inventory.InventoryContainer
   Size: 32
   ItemsRoot: {fileID: 230177304}
-  AddItemContainer: {fileID: 170972511}
+  DropdownContainer: {fileID: 170972511}
 --- !u!1 &966533936
 GameObject:
   m_ObjectHideFlags: 0

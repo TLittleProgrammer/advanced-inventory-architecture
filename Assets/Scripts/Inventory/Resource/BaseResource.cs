@@ -7,7 +7,7 @@ namespace Inventory
         public ResourceType ResourceType { get; }
         public int Amount { get; set; }
 
-        public BaseResource(ResourceType resourceType, int amount)
+        public BaseResource(ResourceType resourceType, int amount = 1)
         {
             ResourceType = resourceType;
             Amount = amount;

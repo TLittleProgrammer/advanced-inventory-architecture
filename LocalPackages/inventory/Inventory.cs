@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
+using LocalPackages.Common;
 
 namespace LocalPackages.Inventory
 {
-    public sealed class Inventory<TResource, TResourceSlot> : IInventory<TResource>
+    public sealed class Inventory<TResource, TResourceSlot> : ISlottableInventory<TResource, TResourceSlot>
         where TResource : IResource
         where TResourceSlot : ResourceSlot<TResource>
     {
-        public event Action<int> Updated;
+        public readonly Trigger<int> Updated = new();
 
         private readonly List<TResourceSlot> _storage;
         
@@ -32,7 +33,7 @@ namespace LocalPackages.Inventory
             {
                 if (_storage[index].TryAdd(resource))
                 {
-                    Updated?.Invoke(index);
+                    Updated.Call(index);
                     return true;
                 }
             }
@@ -44,7 +45,7 @@ namespace LocalPackages.Inventory
         {
             if (_storage[index].TryAdd(resource))
             {
-                Updated?.Invoke(index);
+                Updated.Call(index);
                 return true;
             }
 
@@ -55,11 +56,13 @@ namespace LocalPackages.Inventory
         {
             if (_storage[index].Clear())
             {
-                Updated?.Invoke(index);
+                Updated.Call(index);
                 return true;
             }
             
             return false;
         }
+
+        public TResourceSlot GetSlot(int index) => _storage[index];
     }
 }

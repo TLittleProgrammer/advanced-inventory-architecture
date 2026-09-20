@@ -11,7 +11,6 @@ namespace LoadSteps
             var context = new GameContext();
             var loaders = new List<IExecutable>
             {
-                new InventoryLoader(container.LocationContainer.InventoryContainer),
                 new MechanicsLoader(container),
                 new StartControllersLoader(),
             };

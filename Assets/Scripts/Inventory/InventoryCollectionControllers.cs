@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using DefaultNamespace;
+using Inventory.Slot;
 using LocalPackages.MVC;
 
 namespace Inventory
@@ -21,6 +22,7 @@ namespace Inventory
         {
             yield return new InventoryDropdownSetupController(_context, _model, _container.DropdownContainer);
             yield return new InventoryDropdownAddItemController(_context, _model, _container.DropdownContainer);
+            yield return new InventorySlotLoadController(_context, _model, _container);
         }
     }
 }
