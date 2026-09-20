@@ -3,12 +3,13 @@ using System.Collections.Generic;
 
 namespace GameData.LocalPackages.GameData
 {
-    public sealed class GameDataCollection<TKey, TData> : IGameData<TKey, TData>
+    public sealed class GameDataCollection<TKey, TData, TFillableGameData> : IGameData<TKey, TData> where TFillableGameData : IFillableGameData<TKey, TData>, new()
     {
         private readonly IGameData<TKey,TData> _data;
 
-        public GameDataCollection(IFillableGameData<TKey, TData> data)
+        public GameDataCollection()
         {
+            var data = new TFillableGameData();
             _data = data;
             data.FillData();
         }

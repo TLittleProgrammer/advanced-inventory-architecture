@@ -1,7 +1,11 @@
 {
-    "name": "GameData",
-    "rootNamespace": "GameData",
-    "references": [],
+    "name": "MVC.Runtime.Addressables",
+    "rootNamespace": "",
+    "references": [
+        "Unity.Addressables",
+        "Unity.ResourceManager",
+        "MVC.Runtime"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

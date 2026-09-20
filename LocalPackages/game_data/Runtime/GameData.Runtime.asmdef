@@ -1,9 +1,7 @@
 {
-    "name": "Inventory.Runtime",
-    "rootNamespace": "",
-    "references": [
-        "Common.Runtime"
-    ],
+    "name": "GameData.Runtime",
+    "rootNamespace": "GameData",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

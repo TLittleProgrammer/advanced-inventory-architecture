@@ -2,14 +2,14 @@
     "name": "Scripts",
     "rootNamespace": "",
     "references": [
-        "Common",
-        "MVC",
-        "GameData",
         "Unity.TextMeshPro",
         "Unity.Addressables",
         "Unity.ResourceManager",
-        "MVC.Addressables",
-        "Inventory.Runtime"
+        "Inventory.Runtime",
+        "MVC.Runtime",
+        "MVC.Runtime.Addressables",
+        "GameData.Runtime",
+        "Common.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

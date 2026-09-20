@@ -1,7 +1,10 @@
 {
-    "name": "MVC",
+    "name": "GameData.Tests",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "UnityEngine.TestRunner",
+        "GameData.Runtime"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

@@ -1,11 +1,7 @@
 {
-    "name": "MVC.Addressables",
+    "name": "MVC.Runtime",
     "rootNamespace": "",
-    "references": [
-        "MVC",
-        "Unity.Addressables",
-        "Unity.ResourceManager"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

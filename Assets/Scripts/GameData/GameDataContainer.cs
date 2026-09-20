@@ -10,7 +10,7 @@ namespace DefaultNamespace
 
         public GameDataContainer()
         {
-            InventoryData = new GameDataCollection<ResourceType, InventoryResourceData>(new InventoryFillableGameData());
+            InventoryData = new GameDataCollection<ResourceType, InventoryResourceData, InventoryFillableGameData>();
         }
     }
 }
