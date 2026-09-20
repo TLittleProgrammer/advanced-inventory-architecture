@@ -2,6 +2,8 @@ namespace Data.Inventory
 {
     public enum ResourceType : byte
     {
+        Unknown = 255,
+        
         RubyPotion = 0,
         ManaPotion = 1,
         MoonElixir = 2,

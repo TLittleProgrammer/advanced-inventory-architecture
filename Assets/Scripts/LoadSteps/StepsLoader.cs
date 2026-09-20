@@ -9,7 +9,7 @@ namespace LoadSteps
         public async void Load(SceneContainer container)
         {
             var context = new GameContext();
-            var loaders = new List<IExecutable>()
+            var loaders = new List<IExecutable>
             {
                 new InventoryLoader(container.LocationContainer.InventoryContainer),
                 new MechanicsLoader(container),

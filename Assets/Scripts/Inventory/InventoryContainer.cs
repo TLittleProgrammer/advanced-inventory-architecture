@@ -1,3 +1,4 @@
+using Canvas;
 using UnityEngine;
 
 namespace Inventory
@@ -6,5 +7,6 @@ namespace Inventory
     {
         public int Size;
         public Transform ItemsRoot;
+        public InventoryDropdownContainer DropdownContainer;
     }
 }

@@ -1,8 +1,9 @@
 namespace LocalPackages.Inventory
 {
-    public interface IInventory<TItem> : Common.ICollection<TItem> where TItem : IResource
+    public interface IInventory<TItem> where TItem : IResource
     {
-        void Add(TItem resource);
-        void Remove(TItem resource);
+        bool Add(TItem resource);
+        bool Add(int index, TItem resource);
+        bool Remove(int index);
     }
 }

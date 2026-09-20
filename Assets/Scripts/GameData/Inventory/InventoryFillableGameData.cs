@@ -15,6 +15,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.RubyPotion)),
+                    nameof(ResourceType.RubyPotion),
                     maxCount: 64
                 )
             );
@@ -24,6 +25,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.ManaPotion)),
+                    nameof(ResourceType.ManaPotion),
                     maxCount: 64
                 )
             );
@@ -33,6 +35,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.MoonElixir)),
+                    nameof(ResourceType.MoonElixir),
                     maxCount: 64
                 )
             );
@@ -42,6 +45,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.HoneyFlask)),
+                    nameof(ResourceType.HoneyFlask),
                     maxCount: 64
                 )
             );
@@ -51,6 +55,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.EmeraldCrystalCluster)),
+                    nameof(ResourceType.EmeraldCrystalCluster),
                     maxCount: 64
                 )
             );
@@ -60,6 +65,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.LavenderCrystalShard)),
+                    nameof(ResourceType.LavenderCrystalShard),
                     maxCount: 64
                 )
             );
@@ -69,6 +75,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.Moonstone)),
+                    nameof(ResourceType.Moonstone),
                     maxCount: 64
                 )
             );
@@ -78,6 +85,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.FireGemstone)),
+                    nameof(ResourceType.FireGemstone),
                     maxCount: 64
                 )
             );
@@ -87,6 +95,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.ShortSword)),
+                    nameof(ResourceType.ShortSword),
                     maxCount: 64
                 )
             );
@@ -96,6 +105,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.CrescentAxe)),
+                    nameof(ResourceType.CrescentAxe),
                     maxCount: 64
                 )
             );
@@ -105,6 +115,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.LeafwoodBow)),
+                    nameof(ResourceType.LeafwoodBow),
                     maxCount: 64
                 )
             );
@@ -114,6 +125,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.FeatherArrowQuiver)),
+                    nameof(ResourceType.FeatherArrowQuiver),
                     maxCount: 64
                 )
             );
@@ -123,6 +135,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.OakWand)),
+                    nameof(ResourceType.OakWand),
                     maxCount: 64
                 )
             );
@@ -132,6 +145,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.SunShield)),
+                    nameof(ResourceType.SunShield),
                     maxCount: 64
                 )
             );
@@ -141,6 +155,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.SilverDagger)),
+                    nameof(ResourceType.SilverDagger),
                     maxCount: 64
                 )
             );
@@ -150,6 +165,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.BronzeLantern)),
+                    nameof(ResourceType.BronzeLantern),
                     maxCount: 64
                 )
             );
@@ -159,6 +175,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.WizardHat)),
+                    nameof(ResourceType.WizardHat),
                     maxCount: 64
                 )
             );
@@ -168,6 +185,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.ForestHood)),
+                    nameof(ResourceType.ForestHood),
                     maxCount: 64
                 )
             );
@@ -177,6 +195,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.AdventurerBoots)),
+                    nameof(ResourceType.AdventurerBoots),
                     maxCount: 64
                 )
             );
@@ -186,6 +205,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.LeatherGloves)),
+                    nameof(ResourceType.LeatherGloves),
                     maxCount: 64
                 )
             );
@@ -195,6 +215,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.BlueCloak)),
+                    nameof(ResourceType.BlueCloak),
                     maxCount: 64
                 )
             );
@@ -204,6 +225,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.LeatherSatchel)),
+                    nameof(ResourceType.LeatherSatchel),
                     maxCount: 64
                 )
             );
@@ -213,6 +235,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.AncientSpellbook)),
+                    nameof(ResourceType.AncientSpellbook),
                     maxCount: 64
                 )
             );
@@ -222,6 +245,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.SealedScroll)),
+                    nameof(ResourceType.SealedScroll),
                     maxCount: 64
                 )
             );
@@ -231,6 +255,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.GoldenKey)),
+                    nameof(ResourceType.GoldenKey),
                     maxCount: 64
                 )
             );
@@ -240,6 +265,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.SapphireRing)),
+                    nameof(ResourceType.SapphireRing),
                     maxCount: 64
                 )
             );
@@ -249,6 +275,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.SunAmulet)),
+                    nameof(ResourceType.SunAmulet),
                     maxCount: 64
                 )
             );
@@ -258,6 +285,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.MushroomCluster)),
+                    nameof(ResourceType.MushroomCluster),
                     maxCount: 64
                 )
             );
@@ -267,6 +295,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.HealingHerbs)),
+                    nameof(ResourceType.HealingHerbs),
                     maxCount: 64
                 )
             );
@@ -276,6 +305,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.IridescentFeather)),
+                    nameof(ResourceType.IridescentFeather),
                     maxCount: 64
                 )
             );
@@ -285,6 +315,7 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.CoinPouch)),
+                    nameof(ResourceType.CoinPouch),
                     maxCount: 64
                 )
             );
@@ -294,12 +325,13 @@ namespace DefaultNamespace.GameData.Inventory
                 value: resource_data
                 (
                     spriteData: sprite(AtlasId, nameof(ResourceType.TreasureChest)),
+                    nameof(ResourceType.TreasureChest),
                     maxCount: 64
                 )
             );
         }
 
-        private InventoryResourceData resource_data(SpriteData spriteData, int maxCount) => new(spriteData, maxCount);
+        private InventoryResourceData resource_data(SpriteData spriteData, string name, int maxCount) => new(spriteData, name, maxCount);
         private SpriteData sprite(string atlasId, string spriteId) => new(atlasId, spriteId);
     }
 }

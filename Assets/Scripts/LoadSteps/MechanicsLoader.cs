@@ -16,7 +16,7 @@ namespace LoadSteps
 
         public async Task Execute(IGameContext context)
         {
-            await new InventoryMechanicLoader().Execute(context);
+            await new InventoryMechanicLoader(_container.LocationContainer.InventoryContainer).Execute(context);
         }
     }
 }

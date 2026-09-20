@@ -3,51 +3,63 @@ using System.Collections.Generic;
 
 namespace LocalPackages.Inventory
 {
-    public sealed class Inventory<TItem> : IInventory<TItem> where TItem : IResource
+    public sealed class Inventory<TResource, TResourceSlot> : IInventory<TResource>
+        where TResource : IResource
+        where TResourceSlot : ResourceSlot<TResource>
     {
-        public event Action<TItem> Added;
-        public event Action<TItem> Updated;
-        public event Action<TItem> Removed;
+        public event Action<int> Updated;
 
-        private readonly Dictionary<int, List<TItem>> _storage;
+        private readonly List<TResourceSlot> _storage;
         
         public Inventory()
         {
-            _storage = new Dictionary<int, List<TItem>>();
+            _storage = new List<TResourceSlot>();
         }
 
-        public Inventory(int capacity) : this()
+        public Inventory(int capacity, Func<TResourceSlot> builder) : this()
         {
-            _storage.EnsureCapacity(capacity);
-        }
-        
-        public void Add(TItem resource)
-        {
-            var key = resource.GetHashCode();
-
-            if (!_storage.TryGetValue(key, out var collection))
+            _storage.Capacity = capacity;
+            
+            for (var i = 0; i < _storage.Capacity; i++)
             {
-                collection = new List<TItem>();
-                _storage.Add(key, collection);
+                _storage.Add(builder.Invoke());
+            }
+        }
+
+        public bool Add(TResource resource)
+        {
+            for (var index = 0; index < _storage.Count; index++)
+            {
+                if (_storage[index].TryAdd(resource))
+                {
+                    Updated?.Invoke(index);
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public bool Add(int index, TResource resource)
+        {
+            if (_storage[index].TryAdd(resource))
+            {
+                Updated?.Invoke(index);
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool Remove(int index)
+        {
+            if (_storage[index].Clear())
+            {
+                Updated?.Invoke(index);
+                return true;
             }
             
-            collection.Add(resource);
-            
-            Added?.Invoke(resource);
-            Updated?.Invoke(resource);
-        }
-
-        public void Remove(TItem resource)
-        {
-            var key = resource.GetHashCode();
-
-            if (_storage.TryGetValue(key, out var collection))
-            {
-                collection.Remove(resource);
-                
-                Removed?.Invoke(resource);
-                Updated?.Invoke(resource);
-            }
+            return false;
         }
     }
 }

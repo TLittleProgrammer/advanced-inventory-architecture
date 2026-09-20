@@ -1,4 +1,3 @@
-using System;
 using Data.Inventory;
 
 namespace Inventory
@@ -16,6 +15,6 @@ namespace Inventory
         
         public bool Equals(ResourceType other) => ResourceType == other;
         public override bool Equals(object obj) => obj is IBaseResource other && Equals(other.ResourceType);
-        public override int GetHashCode() => HashCode.Combine((int)ResourceType, Amount);
+        public override int GetHashCode() => (int)ResourceType;
     }
 }
