@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using DefaultNamespace;
+using Inventory.Dropdown;
 using Inventory.Slot;
 using LocalPackages.MVC;
 

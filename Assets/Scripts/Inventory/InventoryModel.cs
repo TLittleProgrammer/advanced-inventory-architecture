@@ -1,6 +1,5 @@
 using System.Collections.Generic;
-using Data.Inventory;
-using DefaultNamespace.GameData.Inventory;
+using GameData.Inventory;
 using GameData.LocalPackages.GameData;
 using Inventory.Resource;
 using LocalPackages.Common;

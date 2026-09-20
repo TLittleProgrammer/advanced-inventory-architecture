@@ -1,9 +1,8 @@
 using System.Threading.Tasks;
-using Canvas;
-using DefaultNamespace;
+using EntryPoint.Containers;
 using Inventory;
 
-namespace LoadSteps
+namespace EntryPoint.Loaders
 {
     public sealed class MechanicsLoader : IExecutable
     {

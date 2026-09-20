@@ -1,4 +1,4 @@
-using Canvas;
+using Inventory.Dropdown;
 using UnityEngine;
 
 namespace Inventory

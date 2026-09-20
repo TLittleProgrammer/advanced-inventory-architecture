@@ -1,4 +1,4 @@
-namespace Data.Inventory
+namespace Inventory.Resource
 {
     public enum ResourceType : byte
     {

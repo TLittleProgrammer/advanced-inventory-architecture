@@ -1,5 +1,4 @@
-using DefaultNamespace;
-using LoadSteps;
+using EntryPoint;
 
 namespace Inventory
 {

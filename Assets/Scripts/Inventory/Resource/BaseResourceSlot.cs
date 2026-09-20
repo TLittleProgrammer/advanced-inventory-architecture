@@ -1,5 +1,4 @@
-using Data.Inventory;
-using DefaultNamespace.GameData.Inventory;
+using GameData.Inventory;
 using GameData.LocalPackages.GameData;
 using LocalPackages.Inventory;
 

@@ -1,8 +1,7 @@
 using System;
-using Data.Inventory;
 using LocalPackages.Inventory;
 
-namespace Inventory
+namespace Inventory.Resource
 {
     public interface IBaseResource : IResource, IEquatable<ResourceType>
     {

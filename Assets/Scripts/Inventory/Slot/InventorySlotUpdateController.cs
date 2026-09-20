@@ -1,4 +1,3 @@
-using DefaultNamespace;
 using Inventory.UI;
 using LocalPackages.MVC;
 using UnityEngine;

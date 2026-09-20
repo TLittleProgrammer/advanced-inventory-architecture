@@ -1,9 +1,7 @@
 using System.Linq;
-using Canvas;
-using DefaultNamespace;
 using LocalPackages.MVC;
 
-namespace Inventory
+namespace Inventory.Dropdown
 {
     public sealed class InventoryDropdownSetupController : IController
     {

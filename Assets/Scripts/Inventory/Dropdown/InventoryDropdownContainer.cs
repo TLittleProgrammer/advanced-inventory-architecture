@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Canvas
+namespace Inventory.Dropdown
 {
     public sealed class InventoryDropdownContainer : MonoBehaviour
     {

@@ -1,6 +1,4 @@
-using Data.Inventory;
-
-namespace Inventory
+namespace Inventory.Resource
 {
     public struct BaseResource : IBaseResource
     {

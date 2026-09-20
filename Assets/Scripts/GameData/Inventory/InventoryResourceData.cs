@@ -1,4 +1,4 @@
-namespace DefaultNamespace.GameData.Inventory
+namespace GameData.Inventory
 {
     public record InventoryResourceData(SpriteData SpriteData, string Name, int MaxCount);
 }

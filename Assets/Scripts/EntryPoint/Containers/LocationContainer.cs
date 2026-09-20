@@ -1,7 +1,7 @@
 using Inventory;
 using UnityEngine;
 
-namespace Canvas
+namespace EntryPoint.Containers
 {
     public sealed class LocationContainer : MonoBehaviour
     {

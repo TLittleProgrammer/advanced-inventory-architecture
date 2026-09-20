@@ -1,4 +1,5 @@
 using System;
+using Inventory.Resource;
 using LocalPackages.MVC;
 
 namespace Inventory.Slot

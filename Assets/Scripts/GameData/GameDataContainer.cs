@@ -1,8 +1,8 @@
-using Data.Inventory;
-using DefaultNamespace.GameData.Inventory;
+using GameData.Inventory;
 using GameData.LocalPackages.GameData;
+using Inventory.Resource;
 
-namespace DefaultNamespace
+namespace GameData
 {
     public sealed class GameDataContainer
     {

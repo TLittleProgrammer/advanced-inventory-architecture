@@ -1,11 +1,9 @@
 using System.Collections.Generic;
+using GameData;
 using LocalPackages.MVC;
 
-namespace DefaultNamespace
+public interface IGameContext
 {
-    public interface IGameContext
-    {
-        GameDataContainer Data { get; }
-        List<IController> Controllers { get; }
-    }
+    GameDataContainer Data { get; }
+    List<IController> Controllers { get; }
 }

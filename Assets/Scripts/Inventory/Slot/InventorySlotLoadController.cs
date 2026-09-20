@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using DefaultNamespace;
 using Inventory.UI;
 using LocalPackages.MVC;
 using MVC.Unity;

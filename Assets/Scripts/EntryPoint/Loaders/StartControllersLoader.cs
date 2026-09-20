@@ -1,7 +1,6 @@
 using System.Threading.Tasks;
-using DefaultNamespace;
 
-namespace LoadSteps
+namespace EntryPoint.Loaders
 {
     public sealed class StartControllersLoader : IExecutable
     {

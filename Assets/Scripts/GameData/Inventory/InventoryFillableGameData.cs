@@ -1,7 +1,7 @@
-using Data.Inventory;
 using GameData.LocalPackages.GameData;
+using Inventory.Resource;
 
-namespace DefaultNamespace.GameData.Inventory
+namespace GameData.Inventory
 {
     public sealed class InventoryFillableGameData : FillableGameData<ResourceType, InventoryResourceData>
     {

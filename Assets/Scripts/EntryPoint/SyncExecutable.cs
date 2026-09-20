@@ -1,7 +1,6 @@
 using System.Threading.Tasks;
-using DefaultNamespace;
 
-namespace LoadSteps
+namespace EntryPoint
 {
     public abstract class SyncExecutable : IExecutable
     {

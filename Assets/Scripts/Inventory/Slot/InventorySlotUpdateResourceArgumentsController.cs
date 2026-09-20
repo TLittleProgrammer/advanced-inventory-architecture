@@ -1,4 +1,3 @@
-using DefaultNamespace;
 using LocalPackages.MVC;
 using UnityEngine.PlayerLoop;
 
