@@ -56,6 +56,19 @@ namespace Tests
             Assert.AreEqual(slot.ResourceId, resourceId);
             Assert.AreEqual(slot.Amount, amount * 2);
         }
+        
+        [TestCase(0, 1, 2)]
+        public void ClearSlot(int resourceId, int amount, int index)
+        {
+            var resource = new TestResource(resourceId, amount);
+            _inventory.Add(index, resource);
+            
+            _inventory.Remove(index);
+            var slot = _inventory.GetSlot(index);
+            
+            Assert.AreEqual(slot.ResourceId, -1);
+            Assert.AreEqual(slot.Amount, 0);
+        }
 
         [TestCase(-1)]
         [TestCase(4)]
