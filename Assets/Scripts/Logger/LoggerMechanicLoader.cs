@@ -1,8 +1,7 @@
 using EntryPoint;
 using Infrastructure;
-using Logger;
 
-namespace System.Runtime.CompilerServices.Logger
+namespace Logger
 {
     public sealed class LoggerMechanicLoader : SyncExecutable
     {

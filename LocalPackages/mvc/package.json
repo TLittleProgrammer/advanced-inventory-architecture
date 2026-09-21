@@ -2,5 +2,5 @@
   "name": "mvc",
   "version": "1.0.0",
   "displayName": "MVC",
-  "dependences": {}
+  "dependencies": {}
 }

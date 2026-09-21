@@ -1,7 +1,7 @@
 using EntryPoint;
 using Infrastructure;
 
-namespace System.Runtime.CompilerServices.SpriteSheets
+namespace Spritesheets
 {
     public class SpriteSheetsMechanicLoader : SyncExecutable
     {

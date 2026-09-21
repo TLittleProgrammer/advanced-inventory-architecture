@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.U2D;
 using ILogger = Logger.ILogger;
 
-namespace System.Runtime.CompilerServices.SpriteSheets
+namespace Spritesheets
 {
     public sealed class SpriteSheetsModel : IModel
     {

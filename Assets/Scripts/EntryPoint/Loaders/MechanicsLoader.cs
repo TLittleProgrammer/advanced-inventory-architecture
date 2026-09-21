@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using System.Runtime.CompilerServices.Logger;
-using System.Runtime.CompilerServices.SpriteSheets;
 using System.Threading.Tasks;
 using EntryPoint.Containers;
 using Infrastructure;
 using Inventory;
+using Logger;
+using Spritesheets;
 
 namespace EntryPoint.Loaders
 {

@@ -2,5 +2,5 @@
   "name": "inventory",
   "version": "1.0.0",
   "displayName": "Inventory",
-  "dependences": {}
+  "dependencies": {}
 }

@@ -1,4 +1,4 @@
-using System.Runtime.CompilerServices.SpriteSheets;
+using Spritesheets;
 
 namespace Infrastructure
 {

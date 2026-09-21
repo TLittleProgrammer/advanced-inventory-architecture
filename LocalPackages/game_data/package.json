@@ -2,5 +2,5 @@
   "name": "game_data",
   "version": "1.0.0",
   "displayName": "Game Data",
-  "dependences": {}
+  "dependencies": {}
 }

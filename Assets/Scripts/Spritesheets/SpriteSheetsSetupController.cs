@@ -1,7 +1,7 @@
 using Infrastructure;
 using LocalPackages.MVC;
 
-namespace System.Runtime.CompilerServices.SpriteSheets
+namespace Spritesheets
 {
     public sealed class SpriteSheetsSetupController : IController
     {

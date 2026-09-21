@@ -4,7 +4,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.U2D;
 
-namespace System.Runtime.CompilerServices.SpriteSheets
+namespace Spritesheets
 {
     public sealed class SpriteSheetsController : IController
     {
