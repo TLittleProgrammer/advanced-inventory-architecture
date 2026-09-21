@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using GameData;
 using LocalPackages.MVC;
+using Logger;
 
 namespace Infrastructure
 {
@@ -8,5 +9,7 @@ namespace Infrastructure
     {
         GameDataContainer Data { get; }
         List<IController> Controllers { get; }
+        ModelsContainer Models { get; }
+        ILogger Logger { get; set; }
     }
 }

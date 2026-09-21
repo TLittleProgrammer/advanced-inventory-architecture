@@ -29,16 +29,12 @@ namespace Inventory.Slot
             _model.Update.OnCall -= OnUpdated;
         }
 
-        private async void OnUpdated(ResourceArguments args)
+        private void OnUpdated(ResourceArguments args)
         {
             var data = _context.Data.InventoryData[args.ResourceType];
-            var key = $"{data.SpriteData.AtlasId}[{data.SpriteData.SpriteId}]";
-            var handle = Addressables.LoadAssetAsync<Sprite>(key);
-            var sprite = await handle.Task;
+            var sprite = _context.Models.SpriteSheets.GetSprite(data.SpriteData);
             
             _container.UpdateView(sprite, args.Amount);
-            
-            Addressables.Release(handle);
         }
     }
 }

@@ -7,4 +7,9 @@ namespace GameData.LocalPackages.GameData
         TValue this[TKey key] { get; }
         bool TryGetValue(TKey key, out TValue value);
     }
+    
+    public interface IGameData<TValue> : IEnumerable<TValue>
+    {
+        TValue this[int index] { get; }
+    }
 }

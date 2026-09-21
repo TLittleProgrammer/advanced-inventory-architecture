@@ -4,7 +4,7 @@ namespace LocalPackages.game_data.Tests
 {
     internal class EnemyFillableData : FillableGameData<EnemyType, EnemyData>
     {
-        public override void FillData()
+        public override void Fill()
         {
             Add
             (

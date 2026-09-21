@@ -7,7 +7,7 @@ namespace GameData.Inventory
     {
         private const string AtlasId = "inventory_icons";
         
-        public override void FillData()
+        public override void Fill()
         {
             Add
             (

@@ -15,13 +15,13 @@ MonoBehaviour:
   m_GroupName: Inventory
   m_GUID: ce1174bd8f19dd74f8e37b39bb0d9b15
   m_SerializeEntries:
-  - m_GUID: e584c92499903744cac7e75473179efe
-    m_Address: inventory_item
+  - m_GUID: 74a2d350250d44b489d6166312853de2
+    m_Address: inventory_icons
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: eaa36952a55447b4d83359f5d949acdf
-    m_Address: inventory_icons
+  - m_GUID: e584c92499903744cac7e75473179efe
+    m_Address: inventory_item
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -1,7 +1,10 @@
 namespace GameData.LocalPackages.GameData
 {
-    public interface IFillableGameData<TKey, TValue> : IGameData<TKey, TValue>
+    public interface IFillableGameData<TKey, TValue> : IGameData<TKey, TValue>, IFillable
     {
-        void FillData();
+    }
+    
+    public interface IFillableGameData<TValue> : IGameData<TValue>, IFillable
+    {
     }
 }

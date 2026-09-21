@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Runtime.CompilerServices.Logger;
+using System.Runtime.CompilerServices.SpriteSheets;
 using System.Threading.Tasks;
 using EntryPoint.Containers;
 using Infrastructure;
@@ -16,7 +19,17 @@ namespace EntryPoint.Loaders
 
         public async Task Execute(IGameContext context)
         {
-            await new InventoryMechanicLoader(_container.LocationContainer.InventoryContainer).Execute(context);
+            var loaders = new List<IExecutable>
+            {
+                new LoggerMechanicLoader(),
+                new SpriteSheetsMechanicLoader(),
+                new InventoryMechanicLoader(_container.LocationContainer.InventoryContainer),
+            };
+
+            foreach (var loader in loaders)
+            {
+                await loader.Execute(context);
+            }
         }
     }
 }
