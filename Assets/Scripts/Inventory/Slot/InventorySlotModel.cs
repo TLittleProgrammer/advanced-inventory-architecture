@@ -1,6 +1,7 @@
 using Inventory.Resource;
 using LocalPackages.Common;
 using LocalPackages.MVC;
+using UnityEngine.EventSystems;
 
 namespace Inventory.Slot
 {
@@ -8,7 +9,8 @@ namespace Inventory.Slot
     {
         public readonly int Index;
         public readonly Trigger<ResourceArguments> Update = new();
-        
+        public readonly Trigger<PointerEventData> DropItem = new();
+
         public InventorySlotModel(int index)
         {
             Index = index;

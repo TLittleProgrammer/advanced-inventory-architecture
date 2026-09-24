@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using GameData.Inventory;
 using GameData.LocalPackages.GameData;
 using Inventory.Resource;
+using Inventory.Slot;
 using LocalPackages.Common;
 using LocalPackages.Inventory;
 using LocalPackages.MVC;
@@ -10,7 +11,9 @@ namespace Inventory
 {
     public sealed class InventoryModel : IModel
     {
-        public Trigger<int> Updated => _inventory.Updated;
+        public ITrigger<int> Updated => _inventory.Updated;
+        
+        public readonly ReactiveCollection<InventorySlotModel> Slots = new();
         
         private readonly IGameData<ResourceType, InventoryResourceData> _data;
         private readonly Inventory<BaseResource, BaseResourceSlot> _inventory;
@@ -42,6 +45,11 @@ namespace Inventory
             var slot = _inventory.GetSlot(index);
 
             return new ResourceArguments(slot.ResourceType, slot.Amount);
+        }
+
+        public void TryMerge(int sourceSlot, int targetSlot)
+        {
+            _inventory.TryMerge(sourceSlot, targetSlot);
         }
     }
 }

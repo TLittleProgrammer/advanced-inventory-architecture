@@ -64,5 +64,14 @@ namespace LocalPackages.Inventory
         }
 
         public TResourceSlot GetSlot(int index) => _storage[index];
+
+        public void TryMerge(int sourceSlot, int targetSlot)
+        {
+            if (_storage[targetSlot].TryMerge(_storage[sourceSlot]))
+            {
+                Updated.Call(targetSlot);
+                Updated.Call(sourceSlot);
+            }
+        }
     }
 }

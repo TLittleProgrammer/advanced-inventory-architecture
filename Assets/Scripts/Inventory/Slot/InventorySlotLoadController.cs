@@ -10,27 +10,29 @@ namespace Inventory.Slot
         protected override string AddressableKey => "inventory_item";
         
         private readonly IGameContext _context;
-        private readonly InventoryModel _model;
-        private readonly InventoryContainer _container;
+        private readonly InventorySlotModel _model;
+        private readonly InventoryModel _inventoryModel;
+        private readonly InventoryContainer _inventoryContainer;
         
-        public InventorySlotLoadController(IGameContext context, InventoryModel model, InventoryContainer container) : base(container.Size)
+        public InventorySlotLoadController(IGameContext context, InventorySlotModel model, InventoryModel inventoryModel, InventoryContainer inventoryContainer)
         {
             _context = context;
             _model = model;
-            _container = container;
+            _inventoryModel = inventoryModel;
+            _inventoryContainer = inventoryContainer;
         }
 
         protected override void InitializeContainer(InventorySlotContainer container)
         {
-            container.transform.SetParent(_container.ItemsRoot, false);
+            container.transform.SetParent(_inventoryContainer.ItemsRoot, false);
         }
 
         protected override IEnumerable<IController> GetControllers(InventorySlotContainer container, int index)
         {
-            var model = new InventorySlotModel(index);
-            
-            yield return new InventorySlotUpdateResourceArgumentsController(_context, model, _model);
-            yield return new InventorySlotUpdateController(_context, model, container);
+            yield return new InventorySlotUpdateResourceArgumentsController(_context, _model, _inventoryModel);
+            yield return new InventorySlotUpdateController(_context, _model, container);
+            yield return new InventorySlotDragAndDropController(_context, _model, container, _inventoryContainer.DraggingSlotRoot);
+            yield return new InventorySlotDropController(_context, _model, container, _inventoryModel, _inventoryContainer);
         }
     }
 }

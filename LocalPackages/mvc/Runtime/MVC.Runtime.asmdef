@@ -1,7 +1,9 @@
 {
     "name": "MVC.Runtime",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "Common.Runtime"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

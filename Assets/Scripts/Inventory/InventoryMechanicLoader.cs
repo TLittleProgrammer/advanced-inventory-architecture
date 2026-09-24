@@ -16,6 +16,7 @@ namespace Inventory
         {
             var model = new InventoryModel(context.Data.InventoryData, _container.Size);
             
+            context.Controllers.Add(new InventorySetUpControllers(context, model, _container));
             context.Controllers.Add(new InventoryCollectionControllers(context, model, _container));
         }
     }

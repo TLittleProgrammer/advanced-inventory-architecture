@@ -31,9 +31,15 @@ namespace Inventory.Slot
 
         private void OnUpdated(ResourceArguments args)
         {
+            if (args.ResourceType == ResourceType.Unknown)
+            {
+                _container.UpdateView(null, 0);
+                return;
+            }
+            
             var data = _context.Data.InventoryData[args.ResourceType];
             var sprite = _context.Models.SpriteSheets.GetSprite(data.SpriteData);
-            
+
             _container.UpdateView(sprite, args.Amount);
         }
     }

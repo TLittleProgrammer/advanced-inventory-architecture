@@ -1,5 +1,6 @@
 using Inventory.Dropdown;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Inventory
 {
@@ -8,5 +9,7 @@ namespace Inventory
         public int Size;
         public Transform ItemsRoot;
         public InventoryDropdownContainer DropdownContainer;
+        public Transform DraggingSlotRoot;
+        public GraphicRaycaster Raycaster;
     }
 }

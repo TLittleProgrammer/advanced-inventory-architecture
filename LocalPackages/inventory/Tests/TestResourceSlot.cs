@@ -8,7 +8,16 @@ namespace Tests
         public int Amount = 0;
         
         private const int DefaultResourceId = -1;
+
+        public override TestResource Resource => new(ResourceId, Amount);
         
+        
+        public override void Set(TestResource resource)
+        {
+            ResourceId = resource.ResourceId;
+            Amount = resource.Amount;
+        }
+
         public override bool TryAdd(TestResource resource)
         {
             if (ResourceId == DefaultResourceId)
@@ -25,6 +34,18 @@ namespace Tests
             
             Amount += resource.Amount;
             
+            return true;
+        }
+
+        public override bool TryMerge(ResourceSlot<TestResource> slot)
+        {
+            if (slot.Resource.ResourceId != ResourceId)
+            {
+                return false;
+            }
+            
+            Amount += slot.Resource.Amount;
+
             return true;
         }
 

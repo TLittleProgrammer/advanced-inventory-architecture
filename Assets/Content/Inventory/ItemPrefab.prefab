@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba8edca0e2a45f98b1b7f8445916286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Scripts::Inventory.UI.CanvasInventoryItemContainer
+  DraggableComponent: {fileID: 8270629928411557082}
   _icon: {fileID: 1780745344322961018}
   _amount: {fileID: 8071377343512408157}
 --- !u!1 &8634850817525417090
@@ -240,6 +241,7 @@ GameObject:
   - component: {fileID: 6038931924975040222}
   - component: {fileID: 5500151046055089952}
   - component: {fileID: 1780745344322961018}
+  - component: {fileID: 8270629928411557082}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -304,3 +306,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8270629928411557082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8634850817525417090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c605c8b5b5164e1ab4fce2cdb1ffff1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Scripts::System.Runtime.CompilerServices.Wrappers.Components.BaseClickableComponent
