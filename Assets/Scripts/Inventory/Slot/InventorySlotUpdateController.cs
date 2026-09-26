@@ -29,18 +29,20 @@ namespace Inventory.Slot
             _model.Update.OnCall -= OnUpdated;
         }
 
-        private void OnUpdated(ResourceArguments args)
+        private void OnUpdated()
         {
-            if (args.ResourceType == ResourceType.Unknown)
+            if (_model.ResourceType == ResourceType.Unknown)
             {
                 _container.UpdateView(null, 0);
+                _container.DraggableComponent.IsRaycastable = false;
                 return;
             }
             
-            var data = _context.Data.InventoryData[args.ResourceType];
+            var data = _context.Data.InventoryData[_model.ResourceType];
             var sprite = _context.Models.SpriteSheets.GetSprite(data.SpriteData);
 
-            _container.UpdateView(sprite, args.Amount);
+            _container.UpdateView(sprite, _model.Amount);
+            _container.DraggableComponent.IsRaycastable = true;
         }
     }
 }

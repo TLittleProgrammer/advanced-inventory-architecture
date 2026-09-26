@@ -52,7 +52,6 @@ namespace Inventory.Slot
         {
             if (slotContainer == _container)
             {
-                Debug.Log($"AAA");
                 return;
             }
             

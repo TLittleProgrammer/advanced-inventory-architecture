@@ -5,7 +5,6 @@
         "Unity.TextMeshPro",
         "Unity.Addressables",
         "Unity.ResourceManager",
-        "Inventory.Runtime",
         "MVC.Runtime",
         "MVC.Runtime.Addressables",
         "GameData.Runtime",

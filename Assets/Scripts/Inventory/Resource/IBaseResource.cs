@@ -1,8 +1,6 @@
-using LocalPackages.Inventory;
-
 namespace Inventory.Resource
 {
-    public interface IBaseResource : IResource
+    public interface IBaseResource
     {
         ResourceType ResourceType { get; }
         int Amount { get; set; }

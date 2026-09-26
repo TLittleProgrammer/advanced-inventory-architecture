@@ -97,12 +97,6 @@
       "source": "local",
       "dependencies": {}
     },
-    "inventory": {
-      "version": "file:../LocalPackages/inventory",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {}
-    },
     "mvc": {
       "version": "file:../LocalPackages/mvc",
       "depth": 0,

@@ -26,7 +26,7 @@ namespace Inventory.Slot
         public void Activate()
         {
             _isDragging = false;
-            _sourceSlotRoot = _container.GetIconParent();
+            _sourceSlotRoot = _container.GetDraggableParent();
             
             _container.DraggableComponent.BeginDrag.OnCall += OnMouseBeginDrag;
             _container.DraggableComponent.EndDrag.OnCall += OnMouseEndDrag;
@@ -35,7 +35,7 @@ namespace Inventory.Slot
 
         public void Deactivate()
         {
-            _container.UpdateIconParent(_sourceSlotRoot);
+            _container.UpdateDraggableParent(_sourceSlotRoot);
             _sourceSlotRoot = null;
             
             _container.DraggableComponent.BeginDrag.OnCall -= OnMouseBeginDrag;
@@ -45,14 +45,14 @@ namespace Inventory.Slot
 
         private void OnMouseBeginDrag(PointerEventData data)
         {
-            if (data.button != PointerEventData.InputButton.Left)
+            if (data.button != PointerEventData.InputButton.Left || _container.IsDefaultSprite)
             {
                 return;
             }
             
             _isDragging = true;
             
-            _container.UpdateIconParent(_draggingSlotRoot);
+            _container.UpdateDraggableParent(_draggingSlotRoot);
         }
 
         private void OnMouseDragging(PointerEventData data)
@@ -62,7 +62,7 @@ namespace Inventory.Slot
                 return;
             }
 
-            _container.IncreaseIconPosition(data.delta);
+            _container.IncreaseDraggablePosition(data.delta);
         }
 
         private void OnMouseEndDrag(PointerEventData data)
@@ -73,7 +73,7 @@ namespace Inventory.Slot
             }
 
             _isDragging = false;
-            _container.UpdateIconParent(_sourceSlotRoot);
+            _container.UpdateDraggableParent(_sourceSlotRoot);
             _container.SetIconPosition(Vector2.zero);
             _model.DropItem.Call(data);
         }

@@ -2,7 +2,7 @@ namespace Inventory.Resource
 {
     public struct BaseResource : IBaseResource
     {
-        public ResourceType ResourceType { get; }
+        public ResourceType ResourceType { get; set; }
         public int Amount { get; set; }
 
         public BaseResource(ResourceType resourceType, int amount = 1)

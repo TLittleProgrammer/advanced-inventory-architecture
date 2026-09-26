@@ -1,27 +1,23 @@
+using System;
 using System.Collections.Generic;
 using GameData.Inventory;
 using GameData.LocalPackages.GameData;
 using Inventory.Resource;
 using Inventory.Slot;
 using LocalPackages.Common;
-using LocalPackages.Inventory;
 using LocalPackages.MVC;
 
 namespace Inventory
 {
     public sealed class InventoryModel : IModel
     {
-        public ITrigger<int> Updated => _inventory.Updated;
-        
         public readonly ReactiveCollection<InventorySlotModel> Slots = new();
         
         private readonly IGameData<ResourceType, InventoryResourceData> _data;
-        private readonly Inventory<BaseResource, BaseResourceSlot> _inventory;
 
-        public InventoryModel(IGameData<ResourceType, InventoryResourceData> data, int capacity)
+        public InventoryModel(IGameData<ResourceType, InventoryResourceData> data)
         {
             _data = data;
-            _inventory = new Inventory<BaseResource, BaseResourceSlot>(capacity, () => new BaseResourceSlot(_data));
         }
 
         public IEnumerable<string> GetDropdownOptions()
@@ -37,19 +33,33 @@ namespace Inventory
             var resourceType = (ResourceType)resourceIndex;
             var resource = new BaseResource(resourceType);
             
-            _inventory.Add(resource);
+            foreach (var slot in Slots)
+            {
+                if (slot.ResourceType == ResourceType.Unknown || resource.ResourceType == slot.ResourceType)
+                {
+                    slot.Increase(resource);
+                    return;
+                }
+            }
         }
 
-        public ResourceArguments GetResourceArguments(int index)
+        public void TryMerge(int sourceSlotIndex, int targetSlotIndex)
         {
-            var slot = _inventory.GetSlot(index);
+            var sourceSlot = Slots[sourceSlotIndex];
+            var targetSlot = Slots[targetSlotIndex];
 
-            return new ResourceArguments(slot.ResourceType, slot.Amount);
-        }
+            if (targetSlot.ResourceType != sourceSlot.ResourceType)
+            {
+                return;
+            }
+            
+            var data = _data[sourceSlot.ResourceType];
+            
+            targetSlot.SetAmount(Math.Min(sourceSlot.Amount + targetSlot.Amount, data.MaxCount));
+            sourceSlot.SetAmount(Math.Max(sourceSlot.Amount - targetSlot.Amount, 0));
 
-        public void TryMerge(int sourceSlot, int targetSlot)
-        {
-            _inventory.TryMerge(sourceSlot, targetSlot);
+            targetSlot.Update.Call();
+            sourceSlot.Update.Call();
         }
     }
 }

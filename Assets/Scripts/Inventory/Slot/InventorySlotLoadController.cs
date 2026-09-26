@@ -29,7 +29,6 @@ namespace Inventory.Slot
 
         protected override IEnumerable<IController> GetControllers(InventorySlotContainer container, int index)
         {
-            yield return new InventorySlotUpdateResourceArgumentsController(_context, _model, _inventoryModel);
             yield return new InventorySlotUpdateController(_context, _model, container);
             yield return new InventorySlotDragAndDropController(_context, _model, container, _inventoryContainer.DraggingSlotRoot);
             yield return new InventorySlotDropController(_context, _model, container, _inventoryModel, _inventoryContainer);

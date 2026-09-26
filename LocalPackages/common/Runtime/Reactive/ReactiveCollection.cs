@@ -7,6 +7,8 @@ namespace LocalPackages.Common
     {
         public ITrigger<TValue> Added => _added;
         public ITrigger<TValue> Removed => _removed;
+        
+        public TValue this[int index] => _collection[index];
 
         private readonly List<TValue> _collection = new();
         private readonly Trigger<TValue> _added = new();
