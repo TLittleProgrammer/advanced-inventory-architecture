@@ -51,7 +51,6 @@ namespace Inventory.Slot
             }
             
             _isDragging = true;
-            
             _container.UpdateDraggableParent(_draggingSlotRoot);
         }
 
@@ -74,8 +73,8 @@ namespace Inventory.Slot
 
             _isDragging = false;
             _container.UpdateDraggableParent(_sourceSlotRoot);
-            _container.SetIconPosition(Vector2.zero);
-            _model.DropItem.Call(data);
+            _container.SetPosition(Vector2.zero);
+            _model.DropItem.Call(data.position);
         }
     }
 }

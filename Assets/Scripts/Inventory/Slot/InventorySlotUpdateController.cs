@@ -1,8 +1,6 @@
 using Infrastructure;
 using Inventory.Resource;
 using LocalPackages.MVC;
-using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 namespace Inventory.Slot
 {
@@ -38,7 +36,7 @@ namespace Inventory.Slot
                 return;
             }
             
-            var data = _context.Data.InventoryData[_model.ResourceType];
+            var data = _context.DataContainer.ResourcesData[_model.ResourceType];
             var sprite = _context.Models.SpriteSheets.GetSprite(data.SpriteData);
 
             _container.UpdateView(sprite, _model.Amount);

@@ -3,7 +3,7 @@ using Inventory.Resource;
 
 namespace GameData.Inventory
 {
-    public sealed class InventoryFillableGameData : FillableGameData<ResourceType, InventoryResourceData>
+    public sealed class InventoryResourcesFillableGameData : FillableGameData<ResourceType, InventoryResourceData>
     {
         private const string AtlasId = "inventory_icons";
         

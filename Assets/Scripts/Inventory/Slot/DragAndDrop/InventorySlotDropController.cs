@@ -1,8 +1,6 @@
-using System.Collections.Generic;
 using Infrastructure;
 using LocalPackages.MVC;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace Inventory.Slot
 {
@@ -10,17 +8,13 @@ namespace Inventory.Slot
     {
         private readonly IGameContext _context;
         private readonly InventorySlotModel _model;
-        private readonly InventorySlotContainer _container;
         private readonly InventoryModel _inventoryModel;
-        private readonly InventoryContainer _inventoryContainer;
 
-        public InventorySlotDropController(IGameContext context, InventorySlotModel model, InventorySlotContainer container, InventoryModel inventoryModel, InventoryContainer inventoryContainer)
+        public InventorySlotDropController(IGameContext context, InventorySlotModel model, InventoryModel inventoryModel)
         {
             _context = context;
             _model = model;
-            _container = container;
             _inventoryModel = inventoryModel;
-            _inventoryContainer = inventoryContainer;
         }
 
         public void Activate()
@@ -33,29 +27,16 @@ namespace Inventory.Slot
             _model.DropItem.OnCall -= OnDropped;
         }
 
-        private void OnDropped(PointerEventData data)
+        private void OnDropped(Vector2 position)
         {
-            var results = new List<RaycastResult>();
-            _inventoryContainer.Raycaster.Raycast(data, results);
-            
-            foreach (var result in results)
-            {
-                if (result.gameObject.TryGetComponent<InventorySlotContainer>(out var slot))
-                {
-                    ProcessDroppedSlot(slot);
-                    return;
-                }
-            }
-        }
+            var model = _inventoryModel.FindSlotByPosition(position);
 
-        private void ProcessDroppedSlot(InventorySlotContainer slotContainer)
-        {
-            if (slotContainer == _container)
+            if (model == null || model == _model)
             {
                 return;
             }
             
-            _inventoryModel.TryMerge(_model.Index, slotContainer.transform.GetSiblingIndex());
+            _inventoryModel.TryMerge(_model.Index, model.Index);
         }
     }
 }

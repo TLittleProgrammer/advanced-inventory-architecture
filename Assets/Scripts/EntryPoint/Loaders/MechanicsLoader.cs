@@ -22,6 +22,7 @@ namespace EntryPoint.Loaders
             var loaders = new List<IExecutable>
             {
                 new LoggerMechanicLoader(),
+                new CameraMechanicLoader(_container.LocationContainer.Camera),
                 new SpriteSheetsMechanicLoader(),
                 new InventoryMechanicLoader(_container.LocationContainer.InventoryContainer),
             };

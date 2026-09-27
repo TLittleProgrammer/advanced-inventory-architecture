@@ -16,7 +16,7 @@ namespace Spritesheets
 
         public void Activate()
         {
-            foreach (var atlasId in _context.Data.Atlases)
+            foreach (var atlasId in _context.DataContainer.Atlases)
             {
                 _model.LoadAtlasRequest.Call(atlasId);
             }

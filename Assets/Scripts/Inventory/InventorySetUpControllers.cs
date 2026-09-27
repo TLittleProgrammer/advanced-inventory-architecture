@@ -8,18 +8,17 @@ namespace Inventory
     {
         private readonly IGameContext _context;
         private readonly InventoryModel _model;
-        private readonly InventoryContainer _container;
 
-        public InventorySetUpControllers(IGameContext context, InventoryModel model, InventoryContainer container)
+        public InventorySetUpControllers(IGameContext context, InventoryModel model)
         {
             _context = context;
             _model = model;
-            _container = container;
         }
 
         public void Activate()
         {
-            for (int i = 0; i < _container.Size; i++)
+            var inventoryData = _context.DataContainer.Inventory.Data;
+            for (int i = 0; i < inventoryData.Size; i++)
             {
                 _model.Slots.Add(new InventorySlotModel(i));
             }

@@ -6,6 +6,7 @@ using Inventory.Resource;
 using Inventory.Slot;
 using LocalPackages.Common;
 using LocalPackages.MVC;
+using UnityEngine;
 
 namespace Inventory
 {
@@ -60,6 +61,19 @@ namespace Inventory
 
             targetSlot.Update.Call();
             sourceSlot.Update.Call();
+        }
+
+        public InventorySlotModel FindSlotByPosition(Vector2 position)
+        {
+            foreach (var slot in Slots)
+            {
+                if (slot.Contains(position))
+                {
+                    return slot;
+                }
+            }
+
+            return null;
         }
     }
 }

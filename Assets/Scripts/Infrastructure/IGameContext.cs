@@ -7,7 +7,7 @@ namespace Infrastructure
 {
     public interface IGameContext
     {
-        GameDataContainer Data { get; }
+        GameDataContainer DataContainer { get; }
         List<IController> Controllers { get; }
         ModelsContainer Models { get; }
         ILogger Logger { get; set; }

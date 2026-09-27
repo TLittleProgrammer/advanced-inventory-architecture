@@ -14,9 +14,9 @@ namespace Inventory
 
         protected override void SyncExecute(IGameContext context)
         {
-            var model = new InventoryModel(context.Data.InventoryData);
+            var model = new InventoryModel(context.DataContainer.ResourcesData);
             
-            context.Controllers.Add(new InventorySetUpControllers(context, model, _container));
+            context.Controllers.Add(new InventorySetUpControllers(context, model));
             context.Controllers.Add(new InventoryCollectionControllers(context, model, _container));
         }
     }

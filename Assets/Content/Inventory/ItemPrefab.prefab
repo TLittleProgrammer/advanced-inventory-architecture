@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Scripts::System.Runtime.CompilerServices.Wrappers.Components.BaseClickableComponent
   RectTransform: {fileID: 5805259051158316729}
+  IsRaycastable: 0
 --- !u!1 &7838345884902993789
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,6 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Scripts::Inventory.UI.CanvasInventoryItemContainer
   DraggableComponent: {fileID: 3162899844179016896}
+  _rect: {fileID: 1047249275268876893}
   _icon: {fileID: 1780745344322961018}
   _amount: {fileID: 8071377343512408157}
 --- !u!1 &8634850817525417090
