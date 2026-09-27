@@ -1,111 +1,111 @@
 # Advanced Inventory Architecture
 
-Unity-проект с системой инвентаря, загрузкой UI через Addressables, данными предметов в коде и локальными пакетами для общих примитивов, game data и MVC-контроллеров.
+Unity project with an inventory system, UI loading via Addressables, item data in code, and local packages for common primitives, game data, and MVC controllers.
 
-## Версия Unity
+## Unity Version
 
-Проект создан для Unity `6000.6.0f1`.
+The project is created for Unity `6000.6.0f1`.
 
-## Запуск
+## Getting Started
 
-1. Откройте папку проекта в Unity.
-2. Откройте сцену `Assets/Scenes/MainScene.unity`.
-3. Запустите Play Mode.
-4. Выберите предмет в выпадающем списке.
-5. Нажмите кнопку добавления предмета.
-6. Для объединения одинаковых предметов перетащите один слот на другой.
+1. Open the project folder in Unity.
+2. Open the scene `Assets/Scenes/MainScene.unity`.
+3. Enter Play Mode.
+4. Select an item from the dropdown.
+5. Click the add item button.
+6. To merge identical items, drag one slot onto another.
 
-## Основные Возможности
+## Key Features
 
-- 32 слота инвентаря.
-- 32 типа предметов в `ResourceType`.
-- Добавление предметов через dropdown и кнопку.
-- Хранение количества предметов в слоте.
-- Ограничение максимального количества через данные предмета.
-- Обновление UI слота при изменении модели.
-- Drag-and-drop между слотами.
-- Объединение одинаковых предметов при drop на другой слот.
-- Загрузка prefab слота через Addressables по ключу `inventory_item`.
-- Загрузка sprite atlas через Addressables по ключу `inventory_icons`.
+- 32 inventory slots.
+- 32 item types in `ResourceType`.
+- Add items via dropdown and button.
+- Store item quantities in a slot.
+- Limit maximum quantity via item data.
+- Update slot UI when the model changes.
+- Drag-and-drop between slots.
+- Merge identical items when dropped onto another slot.
+- Load slot prefab via Addressables using the key `inventory_item`.
+- Load sprite atlas via Addressables using the key `inventory_icons`.
 
-## Структура Проекта
+## Project Structure
 
 ```text
 Assets/
-├── Content/                    # иконки, sprite atlas, prefab слота, UI-ассеты
+├── Content/                    # icons, sprite atlas, slot prefab, UI assets
 ├── Scenes/                     # MainScene
 ├── Scripts/
-│   ├── Camera/                 # модель камеры и загрузчик механики
-│   ├── EntryPoint/             # запуск и остановка проекта
-│   ├── GameData/               # данные инвентаря, предметов и атласов
-│   ├── Infrastructure/         # GameContext и контейнеры моделей
-│   ├── Inventory/              # модель инвентаря, UI-контроллеры, слоты
-│   ├── Logger/                 # интерфейс логгера и Unity-реализация
-│   ├── Spritesheets/           # загрузка и хранение sprite atlas
-│   └── Wrappers/               # компоненты для drag-and-drop
+│   ├── Camera/                 # camera model and mechanics loader
+│   ├── EntryPoint/             # project start and stop
+│   ├── GameData/               # inventory, item, and atlas data
+│   ├── Infrastructure/         # GameContext and model containers
+│   ├── Inventory/              # inventory model, UI controllers, slots
+│   ├── Logger/                 # logger interface and Unity implementation
+│   ├── Spritesheets/           # sprite atlas loading and storage
+│   └── Wrappers/               # components for drag-and-drop
 └── TextMesh Pro/
 
 LocalPackages/
-├── common/                     # коллекции и reactive-примитивы
-├── game_data/                  # generic-хранилища данных и тесты
-└── mvc/                        # контракты MVC и Addressables loader
+├── common/                     # collections and reactive primitives
+├── game_data/                  # generic data storages and tests
+└── mvc/                        # MVC contracts and Addressables loader
 ```
 
-## Поток Инициализации
+## Initialization Flow
 
-1. `EntryPoint` создаёт `GameContext`.
-2. `StepsLoader` запускает загрузчики.
-3. `MechanicsLoader` последовательно подключает logger, camera, spritesheets и inventory.
-4. `GameContext` хранит `GameDataContainer`, список контроллеров, модели и logger.
-5. `InventoryMechanicLoader` создаёт `InventoryModel`, регистрирует setup-контроллеры и UI-контроллеры.
-6. `StartControllersLoader` активирует зарегистрированные контроллеры.
+1. `EntryPoint` creates `GameContext`.
+2. `StepsLoader` runs loaders.
+3. `MechanicsLoader` sequentially connects logger, camera, spritesheets, and inventory.
+4. `GameContext` stores `GameDataContainer`, a list of controllers, models, and logger.
+5. `InventoryMechanicLoader` creates `InventoryModel`, registers setup controllers and UI controllers.
+6. `StartControllersLoader` activates registered controllers.
 
-## Инвентарь
+## Inventory
 
-Код инвентаря находится в `Assets/Scripts/Inventory`.
+The inventory code is located in `Assets/Scripts/Inventory`.
 
-Основные классы:
+Main classes:
 
-- `InventoryModel` хранит коллекцию `InventorySlotModel`.
-- `InventorySlotModel` хранит индекс слота, тип ресурса, количество, прямоугольник слота и события обновления.
-- `BaseResource` содержит `ResourceType` и `Amount`.
-- `InventorySetUpControllers` создаёт слоты по значению из `InventoryData`.
-- `InventorySlotCollectionController` создаёт контроллер загрузки UI для каждого слота.
-- `InventorySlotLoadController` загружает prefab слота через Addressables.
-- `InventorySlotUpdateController` обновляет иконку, количество и raycast-состояние слота.
-- `InventorySlotDragAndDropController` обрабатывает перетаскивание.
-- `InventorySlotDropController` вызывает объединение слотов.
+- `InventoryModel` stores a collection of `InventorySlotModel`.
+- `InventorySlotModel` stores slot index, resource type, quantity, slot rectangle, and update events.
+- `BaseResource` contains `ResourceType` and `Amount`.
+- `InventorySetUpControllers` creates slots based on the value from `InventoryData`.
+- `InventorySlotCollectionController` creates a UI load controller for each slot.
+- `InventorySlotLoadController` loads the slot prefab via Addressables.
+- `InventorySlotUpdateController` updates the slot's icon, quantity, and raycast state.
+- `InventorySlotDragAndDropController` handles dragging.
+- `InventorySlotDropController` triggers slot merging.
 
-Добавление предмета выполняется через `InventoryModel.AddItemByIndex`. Индекс из dropdown приводится к `ResourceType`, после чего предмет добавляется в первый пустой слот или в слот с таким же типом ресурса.
+Adding an item is done via `InventoryModel.AddItemByIndex`. The index from the dropdown is cast to `ResourceType`, after which the item is added to the first empty slot or a slot with the same resource type.
 
-Объединение слотов выполняется через `InventoryModel.TryMerge`. Метод работает только для одинаковых `ResourceType` и учитывает `MaxCount` из данных предмета.
+Merging slots is done via `InventoryModel.TryMerge`. The method works only for identical `ResourceType` and takes into account `MaxCount` from the item data.
 
-## Данные
+## Data
 
-Данные проекта находятся в `Assets/Scripts/GameData`.
+Project data is located in `Assets/Scripts/GameData`.
 
-- `GameDataContainer` создаёт коллекции данных.
-- `InventoryFillableData` задаёт размер инвентаря: `32`.
-- `InventoryResourcesFillableGameData` задаёт список предметов, имя, `MaxCount` и ссылку на sprite.
-- `AtlasesFillableData` задаёт список atlas id для загрузки.
-- `SpriteData` хранит `atlasId` и `spriteId`.
+- `GameDataContainer` creates data collections.
+- `InventoryFillableData` sets the inventory size: `32`.
+- `InventoryResourcesFillableGameData` sets the list of items, name, `MaxCount`, and sprite reference.
+- `AtlasesFillableData` sets the list of atlas ids to load.
+- `SpriteData` stores `atlasId` and `spriteId`.
 
-Все текущие предметы используют atlas id `inventory_icons` и `MaxCount = 64`.
+All current items use atlas id `inventory_icons` and `MaxCount = 64`.
 
 ## Addressables
 
-В проекте используются два ключа Addressables:
+The project uses two Addressables keys:
 
-- `inventory_item` — prefab слота из `Assets/Content/Inventory/ItemPrefab.prefab`.
-- `inventory_icons` — sprite atlas из `Assets/Content/icons.spriteatlas`.
+- `inventory_item` — slot prefab from `Assets/Content/Inventory/ItemPrefab.prefab`.
+- `inventory_icons` — sprite atlas from `Assets/Content/icons.spriteatlas`.
 
-`CollectionLoadController<TContainer>` загружает prefab, создаёт instance и подключает контроллеры к созданному контейнеру.
+`CollectionLoadController<TContainer>` loads the prefab, creates an instance, and attaches controllers to the created container.
 
-`SpriteSheetsController` загружает `SpriteAtlas`, сохраняет его в `SpriteSheetsModel` и отдаёт sprite по данным `SpriteData`.
+`SpriteSheetsController` loads the `SpriteAtlas`, stores it in `SpriteSheetsModel`, and returns a sprite based on `SpriteData`.
 
 ## UI
 
-UI-ссылки хранятся в контейнерах:
+UI references are stored in containers:
 
 - `InventoryContainer`
 - `InventoryDropdownContainer`
@@ -113,13 +113,13 @@ UI-ссылки хранятся в контейнерах:
 - `SceneContainer`
 - `LocationContainer`
 
-Контейнеры являются `MonoBehaviour` и используются для связи сцены с контроллерами.
+The containers are `MonoBehaviour` and are used to link the scene with controllers.
 
-## Локальные Пакеты
+## Local Packages
 
 ### `common`
 
-Содержит:
+Contains:
 
 - `ICollection<TType>`
 - `Trigger`
@@ -131,7 +131,7 @@ UI-ссылки хранятся в контейнерах:
 
 ### `game_data`
 
-Содержит:
+Contains:
 
 - `IGameData`
 - `IFillableGameData`
@@ -140,11 +140,11 @@ UI-ссылки хранятся в контейнерах:
 - `SimpleData`
 - `SimpleGameData`
 
-Также содержит EditMode-тесты для `GameDataCollection`.
+Also contains EditMode tests for `GameDataCollection`.
 
 ### `mvc`
 
-Содержит:
+Contains:
 
 - `IModel`
 - `IView`
@@ -154,19 +154,19 @@ UI-ссылки хранятся в контейнерах:
 - `ReactiveDictionaryController`
 - `CollectionLoadController<TContainer>`
 
-## Тесты
+## Tests
 
-Тесты находятся в `LocalPackages/game_data/Tests`.
+Tests are located in `LocalPackages/game_data/Tests`.
 
-Покрытые сценарии:
+Covered scenarios:
 
-- получение данных по ключу;
-- получение данных через индексатор;
-- обход коллекции через `foreach`.
+- retrieving data by key;
+- retrieving data via indexer;
+- iterating over the collection via `foreach`.
 
-## Зависимости
+## Dependencies
 
-Основные зависимости из `Packages/manifest.json`:
+Main dependencies from `Packages/manifest.json`:
 
 - `com.unity.addressables`
 - `com.unity.ugui`
@@ -176,7 +176,7 @@ UI-ссылки хранятся в контейнерах:
 - `com.unity.modules.ui`
 - `com.unity.modules.uielements`
 
-Локальные зависимости:
+Local dependencies:
 
 - `common`
 - `game_data`
