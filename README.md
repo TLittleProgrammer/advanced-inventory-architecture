@@ -1,244 +1,183 @@
 # Advanced Inventory Architecture
 
-Демонстрационный Unity-проект про организацию инвентаря, разделение ответственности и сборку игровой механики из небольших независимых частей.
+Unity-проект с системой инвентаря, загрузкой UI через Addressables, данными предметов в коде и локальными пакетами для общих примитивов, game data и MVC-контроллеров.
 
-Проект не пытается доказать, что существует единственно правильная архитектура инвентаря. В играх инвентарь почти всегда зависит от жанра, масштаба, требований к UI, сохранениям, сетевой синхронизации, экономике, предметам, крафту и редакторским инструментам. Здесь показан один из возможных подходов: компактный, расширяемый и достаточно прозрачный, чтобы на нём можно было обсудить архитектурные решения.
+## Версия Unity
 
-## Идея
+Проект создан для Unity `6000.6.0f1`.
 
-Цель проекта — показать умение проектировать инвентарь не как набор случайных `MonoBehaviour`, а как систему со слоями:
+## Запуск
 
-- доменная модель инвентаря живёт отдельно от Unity UI;
-- слот отвечает за правила хранения ресурса;
-- UI подписывается на изменения модели и обновляется через контроллеры;
-- игровые данные хранятся отдельно от логики;
-- загрузка prefab и sprite atlas вынесена в отдельные механики;
-- базовая логика покрыта тестами.
+1. Откройте папку проекта в Unity.
+2. Откройте сцену `Assets/Scenes/MainScene.unity`.
+3. Запустите Play Mode.
+4. Выберите предмет в выпадающем списке.
+5. Нажмите кнопку добавления предмета.
+6. Для объединения одинаковых предметов перетащите один слот на другой.
 
-Проект специально сделан небольшим: это не production-ready inventory framework, а архитектурная демонстрация.
+## Основные Возможности
 
-## Что Демонстрируется
+- 32 слота инвентаря.
+- 32 типа предметов в `ResourceType`.
+- Добавление предметов через dropdown и кнопку.
+- Хранение количества предметов в слоте.
+- Ограничение максимального количества через данные предмета.
+- Обновление UI слота при изменении модели.
+- Drag-and-drop между слотами.
+- Объединение одинаковых предметов при drop на другой слот.
+- Загрузка prefab слота через Addressables по ключу `inventory_item`.
+- Загрузка sprite atlas через Addressables по ключу `inventory_icons`.
 
-- Generic-инвентарь с ресурсами и слотами.
-- Стакающиеся предметы с ограничением `MaxCount`.
-- Добавление предметов через UI.
-- Обновление конкретного слота по событию.
-- Разделение runtime-кода и тестов в локальных Unity packages.
-- Использование Addressables для загрузки UI prefab и sprite atlas.
-- Простая MVC-like композиция: model, controller, container/view.
-- Отдельный game-data слой для описания предметов и атласов.
-- Базовые unit tests для доменной логики.
-
-## Архитектурный Обзор
+## Структура Проекта
 
 ```text
-Assets/Scripts
-├── EntryPoint          # запуск, загрузка и выгрузка механик
-├── GameData            # данные предметов, атласов и контейнер данных
-├── Infrastructure      # GameContext, контейнер моделей
-├── Inventory           # игровая механика инвентаря и UI-контроллеры
-├── Logger              # минимальная обёртка над Unity логированием
-└── Spritesheets        # загрузка и хранение sprite atlas
+Assets/
+├── Content/                    # иконки, sprite atlas, prefab слота, UI-ассеты
+├── Scenes/                     # MainScene
+├── Scripts/
+│   ├── Camera/                 # модель камеры и загрузчик механики
+│   ├── EntryPoint/             # запуск и остановка проекта
+│   ├── GameData/               # данные инвентаря, предметов и атласов
+│   ├── Infrastructure/         # GameContext и контейнеры моделей
+│   ├── Inventory/              # модель инвентаря, UI-контроллеры, слоты
+│   ├── Logger/                 # интерфейс логгера и Unity-реализация
+│   ├── Spritesheets/           # загрузка и хранение sprite atlas
+│   └── Wrappers/               # компоненты для drag-and-drop
+└── TextMesh Pro/
 
-LocalPackages
-├── common              # общие примитивы, например Trigger
-├── game_data           # generic коллекции данных
-├── inventory           # Unity-независимая доменная модель инвентаря
-└── mvc                 # минимальные MVC-контракты и Addressables loader
+LocalPackages/
+├── common/                     # коллекции и reactive-примитивы
+├── game_data/                  # generic-хранилища данных и тесты
+└── mvc/                        # контракты MVC и Addressables loader
 ```
 
-## Основной Поток
+## Поток Инициализации
 
 1. `EntryPoint` создаёт `GameContext`.
-2. `StepsLoader` запускает загрузчики механик.
-3. `MechanicsLoader` инициализирует логгер, атласы и инвентарь.
-4. `InventoryMechanicLoader` создаёт `InventoryModel`.
-5. UI-контроллеры подписываются на события модели.
-6. При добавлении предмета модель обновляет слот.
-7. Слот вызывает событие обновления.
-8. Контроллер получает данные предмета, берёт sprite из atlas model и обновляет UI.
-
-Такой поток позволяет держать правила инвентаря отдельно от визуального слоя.
+2. `StepsLoader` запускает загрузчики.
+3. `MechanicsLoader` последовательно подключает logger, camera, spritesheets и inventory.
+4. `GameContext` хранит `GameDataContainer`, список контроллеров, модели и logger.
+5. `InventoryMechanicLoader` создаёт `InventoryModel`, регистрирует setup-контроллеры и UI-контроллеры.
+6. `StartControllersLoader` активирует зарегистрированные контроллеры.
 
 ## Инвентарь
 
-Базовая модель находится в локальном пакете:
+Код инвентаря находится в `Assets/Scripts/Inventory`.
 
-```text
-LocalPackages/inventory/Runtime
-```
+Основные классы:
 
-Ключевые элементы:
+- `InventoryModel` хранит коллекцию `InventorySlotModel`.
+- `InventorySlotModel` хранит индекс слота, тип ресурса, количество, прямоугольник слота и события обновления.
+- `BaseResource` содержит `ResourceType` и `Amount`.
+- `InventorySetUpControllers` создаёт слоты по значению из `InventoryData`.
+- `InventorySlotCollectionController` создаёт контроллер загрузки UI для каждого слота.
+- `InventorySlotLoadController` загружает prefab слота через Addressables.
+- `InventorySlotUpdateController` обновляет иконку, количество и raycast-состояние слота.
+- `InventorySlotDragAndDropController` обрабатывает перетаскивание.
+- `InventorySlotDropController` вызывает объединение слотов.
 
-- `Inventory<TResource, TResourceSlot>` — коллекция слотов и точка входа для операций добавления/удаления.
-- `ResourceSlot<TResource>` — базовый контракт слота.
-- `IResource` — минимальный контракт ресурса.
-- `ISlottableInventory<TItem, TSlot>` — интерфейс инвентаря со слотами.
+Добавление предмета выполняется через `InventoryModel.AddItemByIndex`. Индекс из dropdown приводится к `ResourceType`, после чего предмет добавляется в первый пустой слот или в слот с таким же типом ресурса.
 
-Проектная реализация ресурса находится здесь:
+Объединение слотов выполняется через `InventoryModel.TryMerge`. Метод работает только для одинаковых `ResourceType` и учитывает `MaxCount` из данных предмета.
 
-```text
-Assets/Scripts/Inventory/Resource
-```
+## Данные
 
-`BaseResourceSlot` показывает простую механику стака:
+Данные проекта находятся в `Assets/Scripts/GameData`.
 
-- пустой слот принимает первый ресурс;
-- слот принимает только ресурс того же типа;
-- количество не может превысить `MaxCount`;
-- очистка слота возвращает его в состояние `Unknown`.
+- `GameDataContainer` создаёт коллекции данных.
+- `InventoryFillableData` задаёт размер инвентаря: `32`.
+- `InventoryResourcesFillableGameData` задаёт список предметов, имя, `MaxCount` и ссылку на sprite.
+- `AtlasesFillableData` задаёт список atlas id для загрузки.
+- `SpriteData` хранит `atlasId` и `spriteId`.
 
-## Game Data
+Все текущие предметы используют atlas id `inventory_icons` и `MaxCount = 64`.
 
-Данные предметов описываются через `InventoryFillableGameData`.
+## Addressables
 
-Каждый предмет содержит:
+В проекте используются два ключа Addressables:
 
-- `ResourceType`;
-- имя;
-- ссылку на sprite atlas;
-- имя sprite внутри atlas;
-- максимальное количество в стаке.
+- `inventory_item` — prefab слота из `Assets/Content/Inventory/ItemPrefab.prefab`.
+- `inventory_icons` — sprite atlas из `Assets/Content/icons.spriteatlas`.
 
-Да, эту часть можно было сделать иначе: через ScriptableObject, JSON, Google Sheets export, Addressables labels, code generation или custom editor. В этом проекте выбран простой C# registry, потому что он хорошо показывает идею typed data layer и легко тестируется.
+`CollectionLoadController<TContainer>` загружает prefab, создаёт instance и подключает контроллеры к созданному контейнеру.
 
-## UI И Контроллеры
+`SpriteSheetsController` загружает `SpriteAtlas`, сохраняет его в `SpriteSheetsModel` и отдаёт sprite по данным `SpriteData`.
 
-UI-слой намеренно тонкий.
+## UI
 
-`InventoryDropdownAddItemController` обрабатывает нажатие кнопки добавления.  
-`InventorySlotUpdateResourceArgumentsController` получает событие изменения конкретного слота.  
-`InventorySlotUpdateController` обновляет визуальное представление слота.
+UI-ссылки хранятся в контейнерах:
 
-Контейнеры вроде `InventoryContainer`, `InventoryDropdownContainer` и `InventorySlotContainer` хранят Unity-ссылки и не принимают архитектурных решений.
+- `InventoryContainer`
+- `InventoryDropdownContainer`
+- `InventorySlotContainer`
+- `SceneContainer`
+- `LocationContainer`
 
-## Addressables И Атласы
+Контейнеры являются `MonoBehaviour` и используются для связи сцены с контроллерами.
 
-В проекте используются Addressables:
+## Локальные Пакеты
 
-- для загрузки prefab ячейки инвентаря;
-- для загрузки sprite atlas с иконками предметов.
+### `common`
 
-Загрузка атласов вынесена в отдельную механику `Spritesheets`. Это позволяет не смешивать UI-обновление слота с низкоуровневой загрузкой ассетов.
+Содержит:
 
-Важно: текущая async-часть сделана демонстрационно и намеренно не доведена до уровня production-hardening. В реальном проекте я бы дополнительно усилил:
+- `ICollection<TType>`
+- `Trigger`
+- `Trigger<T>`
+- `Trigger<T1, T2>`
+- `ReactiveCollection<T>`
+- `ReactiveDictionary<TKey, TValue>`
+- `ReactiveProperty<T>`
 
-- обработку ошибок Addressables;
-- отмену загрузки при выгрузке сцены;
-- защиту от повторных запросов;
-- явное состояние `Loading/Loaded/Failed`;
-- обновление UI после завершения ленивой загрузки atlas;
-- отказ от `async void` там, где лучше вернуть `Task` или использовать контролируемый fire-and-forget wrapper.
+### `game_data`
+
+Содержит:
+
+- `IGameData`
+- `IFillableGameData`
+- `FillableGameData`
+- `GameDataCollection`
+- `SimpleData`
+- `SimpleGameData`
+
+Также содержит EditMode-тесты для `GameDataCollection`.
+
+### `mvc`
+
+Содержит:
+
+- `IModel`
+- `IView`
+- `IController`
+- `ControllersCollection`
+- `ReactiveCollectionController`
+- `ReactiveDictionaryController`
+- `CollectionLoadController<TContainer>`
 
 ## Тесты
 
-В проект добавлены тесты для доменных частей:
+Тесты находятся в `LocalPackages/game_data/Tests`.
 
-```text
-LocalPackages/inventory/Tests
-LocalPackages/game_data/Tests
-```
+Покрытые сценарии:
 
-Проверяются:
+- получение данных по ключу;
+- получение данных через индексатор;
+- обход коллекции через `foreach`.
 
-- добавление ресурса в первый подходящий слот;
-- добавление по индексу;
-- merge одинаковых ресурсов;
-- очистка слота;
-- поведение при выходе за диапазон;
-- чтение generic game-data коллекции.
+## Зависимости
 
-Примеры запуска:
+Основные зависимости из `Packages/manifest.json`:
 
-```bash
-dotnet test Inventory.Tests.csproj --no-restore
-dotnet test GameData.Tests.csproj --no-restore
-dotnet build Scripts.csproj
-```
+- `com.unity.addressables`
+- `com.unity.ugui`
+- `com.unity.2d.sprite`
+- `com.unity.ide.rider`
+- `com.unity.ide.visualstudio`
+- `com.unity.modules.ui`
+- `com.unity.modules.uielements`
 
-Unity-проекты генерируют много служебных warning-ов от редакторских сборок и reference assemblies. Для этого демо важнее, что тестовые проекты проходят, а основной `Scripts.csproj` собирается без ошибок.
+Локальные зависимости:
 
-## Почему Это Не "Идеальный Инвентарь"
-
-Потому что идеального инвентаря не существует вне контекста конкретной игры.
-
-Для survival-игры важны вес, объём, hotbar и drag-and-drop.  
-Для RPG — экипировка, редкость, статы, сравнение предметов, сохранения.  
-Для multiplayer — синхронизация, authoritative server, rollback и race conditions.  
-Для mobile casual — простота UI, быстрые feedback-анимации и минимум сложных состояний.
-
-Этот проект показывает основу:
-
-- как отделить правила хранения от Unity;
-- как связать доменную модель с UI;
-- как организовать данные;
-- как разложить код по пакетам;
-- как оставить пространство для расширения.
-
-Он не претендует на единственную истину и не пытается закрыть все сценарии.
-
-## Что Можно Улучшить
-
-Если развивать проект дальше, я бы начал с такого списка:
-
-- заменить прямое преобразование dropdown index в `ResourceType` на явную mapping-модель;
-- усилить async pipeline для Addressables;
-- добавить `CancellationToken`/lifetime handling для загружаемых объектов;
-- уничтожать созданные UI instances при `Deactivate`;
-- добавить отдельные состояния слота: empty, loading icon, ready, failed;
-- перенести данные предметов в ScriptableObject или editor-friendly pipeline;
-- сделать README gif или screenshot с работой инвентаря;
-- добавить GitHub Actions для тестов;
-- добавить PlayMode-тест на UI-сценарий добавления предмета.
-
-## Моя Оценка Проекта
-
-Как демонстрация идеи инвентаря: **7.5/10**.
-
-Проект показывает понимание базовых вещей, которые важны для inventory system:
-
-- отделение логики от UI;
-- работа со слотами;
-- ограничение стаков;
-- data-driven подход;
-- события обновления;
-- тестируемая доменная модель.
-
-Как реализация: **6.5/10**.
-
-Код уже достаточно аккуратный для демонстрационного проекта, но в нём есть спорные места: async-операции, часть публичных Unity-ссылок, простая data registry модель, неидеальная обработка жизненного цикла и отсутствие production-level error handling.
-
-Как GitHub-проект для показа навыков: **7/10 после добавления README**.
-
-Главная ценность проекта не в том, что это готовый asset store framework, а в том, что он показывает ход мысли: как можно разложить игровую механику по слоям, оставить домен тестируемым и не завязать всё на одну сцену.
-
-## Технологии
-
-- Unity `6000.6.0f1`
-- C#
-- UGUI
-- TextMesh Pro
-- Addressables
-- Unity asmdef
-- NUnit tests
-- Local Unity packages
-
-## Быстрый Старт
-
-1. Откройте проект в Unity `6000.6.0f1`.
-2. Откройте сцену:
-
-```text
-Assets/Scenes/MainScene.unity
-```
-
-3. Запустите Play Mode.
-4. Выберите предмет в dropdown.
-5. Нажмите кнопку добавления.
-6. Наблюдайте, как обновляются слоты и количество предметов.
-
-## Финальная Заметка
-
-Этот проект — архитектурный sketch, а не финальный коммерческий инвентарь.
-
-Я понимаю, что реализаций инвентаря может быть бесконечно много, и мой вариант не является единственно правильным. Здесь важнее показать подход: как я думаю о слоях, зависимостях, данных, событиях и тестируемости. Некоторые места можно сделать строже и безопаснее, особенно async/await и загрузку Addressables, но для демонстрационного проекта они оставлены достаточно простыми, чтобы не прятать главную идею за лишней инфраструктурой.
+- `common`
+- `game_data`
+- `mvc`
