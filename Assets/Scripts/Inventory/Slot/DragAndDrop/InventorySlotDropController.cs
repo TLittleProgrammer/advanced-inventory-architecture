@@ -1,5 +1,4 @@
 using Infrastructure;
-using Inventory.Resource;
 using LocalPackages.MVC;
 using UnityEngine;
 
@@ -32,12 +31,21 @@ namespace Inventory.Slot
         {
             var model = _inventoryModel.FindSlotByPosition(position);
 
-            if (model == null || model == _model || (model.ResourceType != ResourceType.Unknown && model.ResourceType != _model.ResourceType))
+            if (model == null || model == _model)
             {
                 return;
             }
-            
-            _inventoryModel.Merge(_model, model);
+
+            var data = _context.DataContainer.ResourcesData[_model.ResourceType];
+
+            if (model.ResourceType != _model.ResourceType || data.MaxCount == model.Amount || data.MaxCount == _model.Amount)
+            {
+                _inventoryModel.Replace(_model, model);
+            }
+            else
+            {
+                _inventoryModel.Merge(_model, model);
+            }
         }
     }
 }

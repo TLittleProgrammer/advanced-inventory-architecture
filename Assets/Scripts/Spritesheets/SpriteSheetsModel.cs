@@ -11,6 +11,7 @@ namespace Spritesheets
     public sealed class SpriteSheetsModel : IModel
     {
         public readonly Trigger<string> LoadAtlasRequest = new();
+        public readonly Trigger<string> AtlasLoaded = new();
 
         private readonly Dictionary<string, SpriteAtlas> _atlases = new();
         private readonly ILogger _logger;
@@ -22,7 +23,13 @@ namespace Spritesheets
 
         public void AddAtlas(string atlasId, SpriteAtlas atlas)
         {
+            if (_atlases.ContainsKey(atlasId))
+            {
+                return;
+            }
+
             _atlases.Add(atlasId, atlas);
+            AtlasLoaded.Call(atlasId);
         }
 
         public Sprite GetSprite(SpriteData data)

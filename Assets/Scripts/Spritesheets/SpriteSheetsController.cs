@@ -28,12 +28,15 @@ namespace Spritesheets
         {
             _model.LoadAtlasRequest.OnCall -= OnLoadAtlasRequest;
             
-            _handle.Release();
+            if (_handle.IsValid())
+            {
+                _handle.Release();
+            }
         }
 
         private async void OnLoadAtlasRequest(string atlasId)
         {
-            if (!_handle.IsDone)
+            if (_handle.IsValid() && !_handle.IsDone)
             {
                 await _handle.Task;
             }

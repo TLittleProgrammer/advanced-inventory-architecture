@@ -7,7 +7,6 @@ namespace Inventory.Slot
 {
     public sealed class InventorySlotModel : IModel
     {
-        public readonly int Index;
         public readonly Trigger Update = new();
         public readonly Trigger UpdateRect = new();
         public readonly Trigger<Vector2> DropItem = new();
@@ -19,15 +18,14 @@ namespace Inventory.Slot
         private Vector2 _minCorner;
         private Vector2 _maxCorner;
 
-        public InventorySlotModel(int index)
+        public InventorySlotModel()
         {
-            Index = index;
+            _resource.ResourceType = ResourceType.Unknown;
         }
 
-        public void Increase(BaseResource resource)
+        public void Increase(int amount)
         {
-            _resource.Amount += resource.Amount;
-            _resource.ResourceType = resource.ResourceType;
+            _resource.Amount += amount;
             
             Update.Call();
         }
@@ -40,11 +38,15 @@ namespace Inventory.Slot
             {
                 _resource.ResourceType = ResourceType.Unknown;
             }
+            
+            Update.Call();
         }
 
         public void SetType(ResourceType resourceType)
         {
             _resource.ResourceType = resourceType;
+            
+            Update.Call();
         }
 
         public void SetRectArguments(Vector2 minCorner, Vector2 maxCorner)
@@ -59,6 +61,14 @@ namespace Inventory.Slot
             
             return position.x >= _minCorner.x && position.x <= _maxCorner.x &&
                    position.y >= _minCorner.y && position.y <= _maxCorner.y;
+        }
+
+        public void Clear()
+        {
+            _resource.ResourceType = ResourceType.Unknown;
+            _resource.Amount = 0;
+            
+            Update.Call();
         }
     }
 }

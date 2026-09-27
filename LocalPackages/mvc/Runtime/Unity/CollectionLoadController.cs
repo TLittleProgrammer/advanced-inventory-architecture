@@ -51,10 +51,17 @@ namespace MVC.Unity
             
             _controllers.Clear();
             
+            if (_instances == null)
+            {
+                return;
+            }
+
             foreach (var instance in _instances)
             {
-                Object.Destroy(instance);
+                Object.Destroy(instance.gameObject);
             }
+
+            _instances = null;
         }
 
         protected abstract IEnumerable<IController> GetControllers(TContainer container, int index);

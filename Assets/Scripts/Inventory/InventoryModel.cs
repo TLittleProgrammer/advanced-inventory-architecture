@@ -35,7 +35,8 @@ namespace Inventory
             {
                 if (CanIncreaseResourceToSlot(resource, slot))
                 {
-                    slot.Increase(resource);
+                    slot.SetType(resource.ResourceType);
+                    slot.Increase(resource.Amount);
                     return;
                 }
             }
@@ -44,15 +45,10 @@ namespace Inventory
         public void Merge(InventorySlotModel sourceSlot, InventorySlotModel targetSlot)
         {
             var data = _data[sourceSlot.ResourceType];
-            var targetValue = sourceSlot.Amount + targetSlot.Amount;
+            var amountSum = sourceSlot.Amount + targetSlot.Amount;
             
-            targetSlot.SetAmount(Math.Min(targetValue, data.MaxCount));
-            sourceSlot.SetAmount(Math.Max(targetValue - data.MaxCount, 0));
-
-            targetSlot.SetType(sourceSlot.ResourceType);
-            
-            targetSlot.Update.Call();
-            sourceSlot.Update.Call();
+            targetSlot.SetAmount(Math.Min(amountSum, data.MaxCount));
+            sourceSlot.SetAmount(Math.Max(amountSum - data.MaxCount, 0));
         }
 
         public InventorySlotModel FindSlotByPosition(Vector2 position)
@@ -68,7 +64,20 @@ namespace Inventory
             return null;
         }
 
+        public void Replace(InventorySlotModel sourceSlot, InventorySlotModel targetSlot)
+        {
+            var resource = new BaseResource(sourceSlot.ResourceType, sourceSlot.Amount);
+            
+            sourceSlot.Clear();
+            sourceSlot.SetType(targetSlot.ResourceType);
+            sourceSlot.SetAmount(targetSlot.Amount);
+
+            targetSlot.Clear();
+            targetSlot.SetType(resource.ResourceType);
+            targetSlot.SetAmount(resource.Amount);
+        }
+
         private bool CanIncreaseResourceToSlot(BaseResource resource, InventorySlotModel slot) =>
-            slot.ResourceType == ResourceType.Unknown || resource.ResourceType == slot.ResourceType && resource.Amount + slot.Amount <= _data[resource.ResourceType].MaxCount;
+            slot.ResourceType == ResourceType.Unknown || (resource.ResourceType == slot.ResourceType && resource.Amount + slot.Amount <= _data[resource.ResourceType].MaxCount);
     }
 }

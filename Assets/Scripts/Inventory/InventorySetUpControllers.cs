@@ -20,7 +20,7 @@ namespace Inventory
             var inventoryData = _context.DataContainer.Inventory.Data;
             for (int i = 0; i < inventoryData.Size; i++)
             {
-                _model.Slots.Add(new InventorySlotModel(i));
+                _model.Slots.Add(new InventorySlotModel());
             }
         }
 
