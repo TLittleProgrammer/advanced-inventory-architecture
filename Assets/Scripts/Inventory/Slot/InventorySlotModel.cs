@@ -42,6 +42,11 @@ namespace Inventory.Slot
             }
         }
 
+        public void SetType(ResourceType resourceType)
+        {
+            _resource.ResourceType = resourceType;
+        }
+
         public void SetRectArguments(Vector2 minCorner, Vector2 maxCorner)
         {
             _minCorner = minCorner;

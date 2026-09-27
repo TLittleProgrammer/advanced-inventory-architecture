@@ -11,6 +11,7 @@ namespace MVC.Unity
 
         private readonly List<IController> _controllers = new();
         private readonly int _count;
+        private TContainer[] _instances;
 
         protected CollectionLoadController(int count = 1)
         {
@@ -24,11 +25,11 @@ namespace MVC.Unity
             await handle.Task;
             
             var prefab = handle.Result.GetComponent<TContainer>();
-            var instances = await Object.InstantiateAsync(prefab, _count);
+            _instances = await Object.InstantiateAsync(prefab, _count);
 
             for(var index = 0; index < _count; index++)
             {
-                var instance = instances[index];
+                var instance = _instances[index];
                 InitializeContainer(instance);
                 _controllers.AddRange(GetControllers(instance, index));
             }
@@ -49,6 +50,11 @@ namespace MVC.Unity
             }
             
             _controllers.Clear();
+            
+            foreach (var instance in _instances)
+            {
+                Object.Destroy(instance);
+            }
         }
 
         protected abstract IEnumerable<IController> GetControllers(TContainer container, int index);

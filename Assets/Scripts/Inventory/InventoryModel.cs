@@ -29,14 +29,11 @@ namespace Inventory
             }
         }
 
-        public void AddItemByIndex(int resourceIndex)
+        public void AddResource(BaseResource resource)
         {
-            var resourceType = (ResourceType)resourceIndex;
-            var resource = new BaseResource(resourceType);
-            
             foreach (var slot in Slots)
             {
-                if (slot.ResourceType == ResourceType.Unknown || resource.ResourceType == slot.ResourceType)
+                if (CanIncreaseResourceToSlot(resource, slot))
                 {
                     slot.Increase(resource);
                     return;
@@ -44,21 +41,16 @@ namespace Inventory
             }
         }
 
-        public void TryMerge(int sourceSlotIndex, int targetSlotIndex)
+        public void Merge(InventorySlotModel sourceSlot, InventorySlotModel targetSlot)
         {
-            var sourceSlot = Slots[sourceSlotIndex];
-            var targetSlot = Slots[targetSlotIndex];
-
-            if (targetSlot.ResourceType != sourceSlot.ResourceType)
-            {
-                return;
-            }
-            
             var data = _data[sourceSlot.ResourceType];
+            var targetValue = sourceSlot.Amount + targetSlot.Amount;
             
-            targetSlot.SetAmount(Math.Min(sourceSlot.Amount + targetSlot.Amount, data.MaxCount));
-            sourceSlot.SetAmount(Math.Max(sourceSlot.Amount - targetSlot.Amount, 0));
+            targetSlot.SetAmount(Math.Min(targetValue, data.MaxCount));
+            sourceSlot.SetAmount(Math.Max(targetValue - data.MaxCount, 0));
 
+            targetSlot.SetType(sourceSlot.ResourceType);
+            
             targetSlot.Update.Call();
             sourceSlot.Update.Call();
         }
@@ -75,5 +67,8 @@ namespace Inventory
 
             return null;
         }
+
+        private bool CanIncreaseResourceToSlot(BaseResource resource, InventorySlotModel slot) =>
+            slot.ResourceType == ResourceType.Unknown || resource.ResourceType == slot.ResourceType && resource.Amount + slot.Amount <= _data[resource.ResourceType].MaxCount;
     }
 }

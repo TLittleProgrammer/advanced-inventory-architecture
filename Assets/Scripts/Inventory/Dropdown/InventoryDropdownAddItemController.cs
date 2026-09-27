@@ -1,4 +1,5 @@
 using Infrastructure;
+using Inventory.Resource;
 using LocalPackages.MVC;
 
 namespace Inventory.Dropdown
@@ -28,7 +29,10 @@ namespace Inventory.Dropdown
 
         private void OnAddItemButtonClicked()
         {
-            _model.AddItemByIndex(_container.Dropdown.value);
+            var resourceType = (ResourceType)_container.Dropdown.value;
+            var resource = new BaseResource(resourceType);
+
+            _model.AddResource(resource);
         }
     }
 }
