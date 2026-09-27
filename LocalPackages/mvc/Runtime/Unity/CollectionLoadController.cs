@@ -10,13 +10,7 @@ namespace MVC.Unity
         protected abstract string AddressableKey { get; }
 
         private readonly List<IController> _controllers = new();
-        private readonly int _count;
-        private TContainer[] _instances;
-
-        protected CollectionLoadController(int count = 1)
-        {
-            _count = count;
-        }
+        private TContainer _instance;
         
         public async void Activate()
         {
@@ -25,14 +19,10 @@ namespace MVC.Unity
             await handle.Task;
             
             var prefab = handle.Result.GetComponent<TContainer>();
-            _instances = await Object.InstantiateAsync(prefab, _count);
+            _instance = Object.Instantiate(prefab);
 
-            for(var index = 0; index < _count; index++)
-            {
-                var instance = _instances[index];
-                InitializeContainer(instance);
-                _controllers.AddRange(GetControllers(instance, index));
-            }
+            InitializeContainer(_instance);
+            _controllers.AddRange(GetControllers(_instance));
 
             foreach (var controller in _controllers)
             {
@@ -51,20 +41,16 @@ namespace MVC.Unity
             
             _controllers.Clear();
             
-            if (_instances == null)
+            if (_instance == null)
             {
                 return;
             }
 
-            foreach (var instance in _instances)
-            {
-                Object.Destroy(instance.gameObject);
-            }
-
-            _instances = null;
+            Object.Destroy(_instance.gameObject);
+            _instance = null;
         }
 
-        protected abstract IEnumerable<IController> GetControllers(TContainer container, int index);
+        protected abstract IEnumerable<IController> GetControllers(TContainer container);
         protected abstract void InitializeContainer(TContainer container);
     }
 }

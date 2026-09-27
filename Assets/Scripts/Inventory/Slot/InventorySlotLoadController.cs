@@ -27,7 +27,7 @@ namespace Inventory.Slot
             container.transform.SetParent(_inventoryContainer.ItemsRoot, false);
         }
 
-        protected override IEnumerable<IController> GetControllers(InventorySlotContainer container, int index)
+        protected override IEnumerable<IController> GetControllers(InventorySlotContainer container)
         {
             yield return new InventorySlotUpdateController(_context, _model, container);
             yield return new InventorySlotDragAndDropController(_context, _model, container, _inventoryContainer.DraggingSlotRoot);
