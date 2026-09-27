@@ -14,14 +14,9 @@ namespace Inventory.Slot
         public ResourceType ResourceType => _resource.ResourceType;
         public int Amount => _resource.Amount;
 
-        private BaseResource _resource;
+        private BaseResource _resource = new(ResourceType.Unknown);
         private Vector2 _minCorner;
         private Vector2 _maxCorner;
-
-        public InventorySlotModel()
-        {
-            _resource.ResourceType = ResourceType.Unknown;
-        }
 
         public void Increase(int amount)
         {
